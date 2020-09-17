@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
 
-import unsplash from '../helpers/unsplash'
-import Header from '../Header/Header'
-
-
-
+import unsplash from '../helpers/unsplash';
+import Header from '../Header/Header';
+import ImageList from '../ImageList/ImageList';
 
 
 const App = () => {
@@ -21,10 +19,19 @@ const App = () => {
      setImages(response.data.results);
    };
 
-
+  //  useEffect(() => {
+  //    onSearchSubmit('health')
+  //  }, [])
 
   return(
+    <main>
     <Header />
+    {(images)?
+    <ImageList 
+      images={images}
+    />
+   : null }
+    </main>
   )
 }
 export default App;
