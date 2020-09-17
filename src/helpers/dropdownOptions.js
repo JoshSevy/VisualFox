@@ -17,7 +17,7 @@ export const options = {
       value: "fitness",
     },
   ],
-  Dream: [
+  dream: [
     {
       label: "Dream House",
       value: "houses",
