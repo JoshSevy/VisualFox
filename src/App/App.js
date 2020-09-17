@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.scss';
 
 import unsplash from '../helpers/unsplash';
 import Header from '../Header/Header';
@@ -19,9 +18,9 @@ const App = () => {
      setImages(response.data.results);
    };
 
-  //  useEffect(() => {
-  //    onSearchSubmit('health')
-  //  }, [])
+   useEffect(() => {
+     onSearchSubmit('health')
+   }, [])
 
   return(
     <main>
