@@ -7,7 +7,7 @@ import ImageList from '../ImageList/ImageList';
 
 
 const App = () => {
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
 
    const onSearchSubmit = async (term) => {
      const response = await unsplash.get(
