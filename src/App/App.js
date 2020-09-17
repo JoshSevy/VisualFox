@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import unsplash from '../helpers/unsplash';
 import Header from '../Header/Header';
-import Home from '../Home/Home'
+import Home from '../Home/Home';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import { Route } from 'react-router-dom';
 
 
@@ -33,7 +34,9 @@ const App = () => {
       }}
     />
     <Route exact path="/error"
-    
+      render={() => {
+        return <ErrorPage />
+      }}
     />
     </main>
   )
