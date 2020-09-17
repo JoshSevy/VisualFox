@@ -4,5 +4,15 @@ import './Board.scss';
 const Board = () => {
 
 
-  return(<h1>Board</h1>)
+  return(
+    <article className="Board">
+    <h2>Here is Your Board!</h2>
+      <article className="image-container">
+      {/* <ImageList images={images} /> */}
+      </article>
+      <button>Next Prompt!</button>
+      <button>Start Over!</button>
+    </article>
+    
+    )
 }

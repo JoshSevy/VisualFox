@@ -41,17 +41,18 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+Here a Visual Fox our goal is to help you create a clear vision of your goals. In the app we ask some questions to help zone in on these goals and build a visual board for you to help keep you vision clear. 
+
 Turing Mod 3 solo project.
 With a 5 day turn around to MVP.
 
-
-
 ### Built With
 
-* [Laravel](https://laravel.com)
-- React Hooks
-- SCSS
-- TDD with Jest
+
+* [React](reactjs.org)
+* [Sass](sass-lang.com)
+* [Jest](jestjs.io)
 
 ## Getting Started
 
