@@ -6,7 +6,9 @@ const Prompt = () => {
 
   return(
     <article className="Prompt">
-      <h2>Prompt</h2>
+      <h2>Prompt Question</h2>
+      <input type="dropdown"/>
+      <button>Submit</button>
     </article>
   )
 }

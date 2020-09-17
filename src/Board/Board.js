@@ -3,7 +3,6 @@ import './Board.scss';
 
 const Board = () => {
 
-
   return(
     <article className="Board">
     <h2>Here is Your Board!</h2>
@@ -13,6 +12,5 @@ const Board = () => {
       <button>Next Prompt!</button>
       <button>Start Over!</button>
     </article>
-    
     )
 }

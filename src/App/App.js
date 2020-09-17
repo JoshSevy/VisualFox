@@ -19,7 +19,7 @@ const App = () => {
    };
 
    useEffect(() => {
-     onSearchSubmit('health')
+    //  onSearchSubmit('health')
    }, [])
 
   return(
