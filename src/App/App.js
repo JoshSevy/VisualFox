@@ -4,11 +4,13 @@ import unsplash from '../helpers/unsplash';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import Prompt from '../Prompt/Prompt'
 import { Route } from 'react-router-dom';
 
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [board, setBoard] = useState([]);
   const [error, setError] = useState(false);
 
    const onSearchSubmit = async (term) => {
@@ -31,6 +33,11 @@ const App = () => {
     <Route exact path="/" 
       render={()=> {
         return <Home />
+      }}
+    />
+    <Route exact path="/prompt"
+      render={() => {
+        return <Prompt />
       }}
     />
     <Route exact path="/error"
