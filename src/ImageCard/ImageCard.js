@@ -4,5 +4,7 @@ import './ImageCard.scss'
 const ImageCard = () => {
 
 
-  return(<h1>ImageCard</h1>)
+  return(
+  <h1>ImageCard</h1>
+  )
 }
