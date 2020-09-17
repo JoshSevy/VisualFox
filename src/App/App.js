@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import unsplash from '../helpers/unsplash';
 import Header from '../Header/Header';
-import ImageList from '../ImageList/ImageList';
+import Home from '../Home/Home'
+import { Route } from 'react-router-dom';
 
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [error, setError] = useState(false);
 
    const onSearchSubmit = async (term) => {
      const response = await unsplash.get(
@@ -14,7 +16,7 @@ const App = () => {
        {
          params: { query: term },
        }
-     );
+     ).catch(() => setError(true));
      setImages(response.data.results);
    };
 
@@ -25,11 +27,11 @@ const App = () => {
   return(
     <main>
     <Header />
-    {(images)?
-    <ImageList 
-      images={images}
+    <Route exact path="/" 
+      render={()=> {
+        return <Home />
+      }}
     />
-   : null }
     </main>
   )
 }
