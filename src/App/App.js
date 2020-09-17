@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './App.scss';
 
+import unsplash from '../helpers/unsplash'
 import Header from '../Header/Header'
+
 
 
 
@@ -9,7 +11,7 @@ import Header from '../Header/Header'
 const App = () => {
   const [images, setImages] = useState();
 
-   onSearchSubmit = async (term) => {
+   const onSearchSubmit = async (term) => {
      const response = await unsplash.get(
        "https://api.unsplash.com/search/photos",
        {
