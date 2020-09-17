@@ -32,6 +32,9 @@ const App = () => {
         return <Home />
       }}
     />
+    <Route exact path="/error"
+    
+    />
     </main>
   )
 }
