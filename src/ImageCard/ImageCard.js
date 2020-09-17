@@ -16,14 +16,14 @@ const ImageCard = () => {
 
     setSpans(cardSpans);
   };
-  const { description, urls } = props.image;
+  // const { description, urls } = props.image;
 
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
         ref={imageRef} 
-        alt={description} 
-        src={urls.regular} 
+        alt={"description"} 
+        src={"urls.regular"} 
       />
     </div>
   );
