@@ -1,0 +1,23 @@
+/* SCSS FONT */
+$default-font-size: 1.6rem;
+
+
+/* SCSS HEX COLORS */
+$rich-black: #080708ff;
+$blue-crayola: #3772ffff;
+$rose-madder: #df2935ff;
+$sunglow: #fdca40ff;
+$platinum: #e6e8e6ff;
+$dark-grey: #4b4949;
+
+
+/* SCSS Gradient Colors */
+$gradient-top: linear-gradient(0deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-right: linear-gradient(90deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-bottom: linear-gradient(180deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-left: linear-gradient(270deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-top-right: linear-gradient(45deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-bottom-right: linear-gradient(135deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-top-left: linear-gradient(225deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-bottom-left: linear-gradient(315deg, #080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
+$gradient-radial: radial-gradient(#080708ff, #3772ffff, #df2935ff, #fdca40ff, #e6e8e6ff);
