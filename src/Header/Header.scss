@@ -2,7 +2,6 @@
 
 .Header {
   display: flex;
-  justify-content: space-between;
   background-color: $blue-crayola;
   color: $platinum;
   width: 100%;
@@ -18,8 +17,12 @@
 
   &-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
   }
+
+  
 }
 
 
