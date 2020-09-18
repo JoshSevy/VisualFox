@@ -52,6 +52,5 @@ export const options = {
       label: "Desserts",
       value: 'desserts',
     }
-  ]
-
+  ],
 }
