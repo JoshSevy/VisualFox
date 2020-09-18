@@ -28,7 +28,7 @@ const App = () => {
    }, [])
 
   return(
-    <main>
+    <section>
     <Header />
     <Route exact path="/" 
       render={()=> {
@@ -45,7 +45,7 @@ const App = () => {
         return <ErrorPage />
       }}
     />
-    </main>
+    </section >
   )
 }
 export default App;

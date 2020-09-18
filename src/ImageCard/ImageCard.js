@@ -21,6 +21,7 @@ const ImageCard = (props) => {
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
+        className="image"
         ref={imageRef} 
         alt={alt_description} 
         src={urls.regular} 

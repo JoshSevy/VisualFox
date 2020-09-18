@@ -1,0 +1,18 @@
+.Home {
+  text-align: center;
+}
+
+.home-carousel {
+  display: flex;
+  max-height: 200px;
+  width: 100%;
+  overflow: auto;
+}
+
+.home-image {
+  max-height: -webkit-fill-available;
+}
+
+.info-section {
+  padding: 20px 20px;
+}
