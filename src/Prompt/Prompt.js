@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
 
-import './Prompt.scss'
+import './Prompt.scss';
 import { options } from '../helpers/dropdownOptions'
 
 const Prompt = () => {
@@ -12,12 +12,12 @@ const Prompt = () => {
     <article className="Prompt">
       <article className="prompt-card">
         <h2>Prompt Question</h2>
-        <Dropdown 
+        {/* <Dropdown 
           options={options.fitness}
-          label={'health'}
+          label={options.fitness}
           selected={selected}
           onSelectedChange={setSelected}
-        />
+        /> */}
         <button>Submit</button>
       </article>
     </article>
