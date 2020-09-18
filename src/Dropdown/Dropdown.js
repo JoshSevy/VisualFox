@@ -6,7 +6,6 @@ const Dropdown = ({ options , selected, onSelectedChange, label }) => {
   const ref = useRef();
 
   useEffect(() => {
-    console.log(options)
     const onBodyClick = (event) => {
       if (ref.current.contains(event.target)) {
         return;
@@ -38,15 +37,15 @@ const Dropdown = ({ options , selected, onSelectedChange, label }) => {
   });
 
   return (
-    <section ref={ref} className="Dropdown">
-      <article className="dropdown-field">
+    <section ref={ref} className="ui form">
+      <article className="field">
         <label
-          className="dropdown-label"
+          className="label"
         >
           {label}
         </label>
         <article
-          className={`dropdown-bar ${open ? 'active' : ''}`}
+          className={`ui selection dropdown ${open ? 'visible active' : ''}`}
           onClick={() => setOpen(!open)}
         >
           <img />
@@ -56,7 +55,7 @@ const Dropdown = ({ options , selected, onSelectedChange, label }) => {
             {selected.label}
           </article>
           <article
-            className={`dropdown-menu ${open ? 'visible transition' : ''}`}
+            className={`menu ${open ? 'visible transition' : ''}`}
           >
             {renderedOptions}
           </article>
