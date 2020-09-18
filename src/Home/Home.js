@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Board from '../Board/Board'
 import './Home.scss';
+import '../style/buttons.scss'
 
 const Home = () => {
 
@@ -31,8 +32,8 @@ const Home = () => {
       </article>
       <article className="home-start-section">
         <article className="home-start">
-          <Link to="/prompt">
-            <h3>Lets get started!</h3>
+          <Link to="/prompt" className="btn btn-white">
+            <p className="btn-text">Lets get started!</p>
           </Link>
         </article>
       </article>
