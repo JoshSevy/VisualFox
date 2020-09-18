@@ -1,16 +1,17 @@
 import React from 'react';
+import ImageList from '../ImageList/ImageList'
 import './Board.scss';
 
-const Board = () => {
+const Board = (props) => {
 
   return(
     <article className="Board">
     <h2>Here is Your Board!</h2>
       <article className="image-container">
-      {/* <ImageList images={images} /> */}
+      <ImageList images={props.images} />
       </article>
-      <button>Next Prompt!</button>
-      <button>Start Over!</button>
     </article>
     )
 }
+
+export default Board;

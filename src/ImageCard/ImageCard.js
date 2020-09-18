@@ -24,7 +24,6 @@ const ImageCard = (props) => {
         ref={imageRef} 
         alt={alt_description} 
         src={urls.regular} 
-        onClick={() => console.log(image)}
       />
     </div>
   );
