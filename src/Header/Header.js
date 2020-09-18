@@ -15,7 +15,7 @@ const Header = () => {
           className="Header-logo" 
           src={foxLogo}/>
       </Link>
-      <h1 className="Header-title">Visualize Your Goals</h1>
+      <h1 className="Header-title">VisualFox</h1>
       <article className="Header-links">
         <button>Home</button>
         <button>Boards</button>

@@ -12,12 +12,12 @@ const Prompt = () => {
     <article className="Prompt">
       <article className="prompt-card">
         <h2>Prompt Question</h2>
-        {/* <Dropdown 
-          options={options.fitness}
+        <Dropdown 
+          options={options.diet}
           label={options.fitness}
           selected={selected}
           onSelectedChange={setSelected}
-        /> */}
+        />
         <button>Submit</button>
       </article>
     </article>
