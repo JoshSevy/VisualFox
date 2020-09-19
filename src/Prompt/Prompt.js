@@ -8,6 +8,7 @@ import { options } from '../helpers/dropdownOptions'
 const Prompt = () => {
   const [selected, setSelected] = useState(options.fitness[0])
   const [promptNumber, setPromptNumber] = useState(0)
+  const [boardName, setBoardName] = useState('')
 
   return (
     <article className="Prompt">
@@ -15,11 +16,16 @@ const Prompt = () => {
         <img 
           className="Header-logo"
           src={foxLogo} />
-        <h2>Prompt Question</h2>
+        <h2>What type of board are we building today?</h2>
         {promptNumber === 0 ? (
           <article className="prompt-input">
             <label>Name your Board:</label>
-            <input />
+            <input 
+              type="text"
+              placeholder="Lets name this board"
+              value={boardName}
+              onChange={(e) => setBoardName(e.target.value)}
+            />
             <label>Select a Board Type</label>
             <select></select>
           </article>
