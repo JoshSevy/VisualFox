@@ -24,7 +24,7 @@ const ImageCard = (props) => {
         className="image"
         ref={imageRef} 
         alt={alt_description} 
-        src={urls.regular} 
+        src={urls.small} 
       />
     </div>
   );

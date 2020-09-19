@@ -5,12 +5,13 @@ import Header from '../Header/Header';
 import Home from '../Home/Home';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Prompt from '../Prompt/Prompt';
-import ImageList from '../ImageList/ImageList';
-import { Route } from 'react-router-dom';
+import Results from '../Results/Results';
+import { Redirect, Route } from 'react-router-dom';
 
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [boardName, setBoardName] = useState('')
   const [board, setBoard] = useState([]);
   const [error, setError] = useState(false);
   const [selectedSearch, setSelectedSearch] = useState();
@@ -29,14 +30,16 @@ const App = () => {
     }
   };
 
-   useEffect(() => {
-    //  onSearchSubmit('test')
-   }, [])
+  const resetError = () => {
+    setError(false)
+  }
 
   return (
     <section>
-      <Header />
-      {(error) ? <ErrorPage /> : null}
+      <Header 
+        resetError={resetError}
+      />
+      {(error) ? <Redirect to="/error"/>: null}
       <Route
         exact
         path="/"
@@ -60,7 +63,7 @@ const App = () => {
         path="/result"
         render={() => {
           return (
-          <ImageList
+          <Results
             images={images}
            />
            )

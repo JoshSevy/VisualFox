@@ -5,7 +5,7 @@ import './Header.scss';
 import  foxLogo  from '../assets/logo/foxLogo.png';
 
 
-const Header = () => {
+const Header = ({resetError}) => {
 
   return (
     <section>
@@ -15,13 +15,16 @@ const Header = () => {
             alt="Visual fox logo orange fox head"
             className="Header-logo"
             src={foxLogo}
+            onClick={resetError}
           />
         </Link>
         <h1 className="Header-title">VisualFox</h1>
       </article>
       <article className="Header-links">
         <NavLink to="/" className="btn btn-white">
-          <p className="btn-text">Home</p>
+          <p className="btn-text" onClick={resetError}>
+            Home
+          </p>
         </NavLink>
         <NavLink to="/boards" className="btn btn-white">
           <p className="btn-text">Boards</p>
