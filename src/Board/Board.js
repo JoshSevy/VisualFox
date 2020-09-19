@@ -1,8 +1,14 @@
 import React from 'react';
+
 import './Board.scss';
 
-const Board = () => {
+const Board = ({images}) => {
 
-
-  return(<h1>Board</h1>)
+  return(
+    <article className="Board">
+    <h2>Here is Your Board!</h2>
+    </article>
+    )
 }
+
+export default Board;

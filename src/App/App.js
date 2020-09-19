@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 import unsplash from '../helpers/unsplash';
 import Header from '../Header/Header';
-import ImageList from '../ImageList/ImageList';
+import Home from '../Home/Home';
+import ErrorPage from '../ErrorPage/ErrorPage';
+import Prompt from '../Prompt/Prompt'
+import { Route } from 'react-router-dom';
 
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [board, setBoard] = useState([]);
+  const [error, setError] = useState(false);
 
    const onSearchSubmit = async (term) => {
      const response = await unsplash.get(
@@ -14,23 +19,37 @@ const App = () => {
        {
          params: { query: term },
        }
-     );
+     ).catch(() => setError(true));
      setImages(response.data.results);
    };
 
    useEffect(() => {
-     onSearchSubmit('health')
+    // onSearchSubmit('loft')
    }, [])
 
   return(
-    <main>
+    <section>
     <Header />
-    {(images)?
-    <ImageList 
-      images={images}
+    <Route exact path="/" 
+      render={()=> {
+        return <Home />
+      }}
     />
-   : null }
-    </main>
+    <Route exact path="/prompt/"
+      render={({match}) => {
+        return (
+        <Prompt
+        
+         />
+        )
+      }}
+    />
+    <Route exact path="/error"
+      render={() => {
+        return <ErrorPage />
+      }}
+    />
+    </section >
   )
 }
 export default App;
