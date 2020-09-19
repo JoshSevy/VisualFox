@@ -6,7 +6,7 @@ import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
 import { options } from '../helpers/dropdownOptions'
 
-const Prompt = ({onSearchSubmit}) => {
+const Prompt = ({onSearchSubmit, getBoardName}) => {
   const [mainSelection, setMainSelection] = useState('default')
   const [selected, setSelected] = useState()
   const [promptNumber, setPromptNumber] = useState(0)
@@ -21,10 +21,6 @@ const Prompt = ({onSearchSubmit}) => {
   const renderMainOptions = options.categories.map((selection) => {
     return <option value={selection.value} label={selection.label} />;
   });
-
-  useEffect(() => {
-    
-  }, [selected]) 
 
   const clearPromptState = () => {
     setSelected({});
@@ -45,13 +41,20 @@ const Prompt = ({onSearchSubmit}) => {
               placeholder="Lets name this board"
               value={boardName}
               onChange={(e) => setBoardName(e.target.value)}
+              required
             />
             <label>Select a Board Type</label>
-            <select onChange={(e) => setMainSelection(e.target.value)}>
+            <select 
+              onChange={(e) => setMainSelection(e.target.value)}
+              required
+            >
               {renderMainOptions}
             </select>
             <label>SubCategory</label>
-            <select onChange={(e) => setSelected(e.target.value)}>
+            <select 
+              onChange={(e) => setSelected(e.target.value)}
+              required
+            >
               {renderSubCategoryOptions}
             </select>
           </article>
@@ -72,6 +75,7 @@ const Prompt = ({onSearchSubmit}) => {
           to="/result"
           className="btn btn-prompt"
           onClick={() => onSearchSubmit(selected)}
+          getBoardName={getBoardName(boardName)}
         >
           <p className="btn-text">Next</p>
         </Link>

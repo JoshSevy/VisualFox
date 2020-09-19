@@ -14,7 +14,7 @@ const App = () => {
   const [boardName, setBoardName] = useState('')
   const [board, setBoard] = useState([]);
   const [error, setError] = useState(false);
-  const [selectedSearch, setSelectedSearch] = useState();
+  const [selectedPhotos, setSelectedPhotos] = useState();
 
   const onSearchSubmit = async (term) => {
     try {
@@ -32,6 +32,14 @@ const App = () => {
 
   const resetError = () => {
     setError(false)
+  };
+
+  const getBoardName = (name) => {
+    setBoardName(name)
+  }
+
+  const getSelectedPhoto = (image) => {
+    setSelectedPhotos(image)
   }
 
   return (
@@ -54,6 +62,7 @@ const App = () => {
           return (
           <Prompt
             onSearchSubmit={onSearchSubmit}
+            getBoardName={getBoardName}
            />
           )
         }}
@@ -65,6 +74,7 @@ const App = () => {
           return (
           <Results
             images={images}
+            getSelectedPhoto={getSelectedPhoto}
            />
            )
         }}
