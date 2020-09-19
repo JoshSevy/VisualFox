@@ -15,23 +15,28 @@ const App = () => {
   const [error, setError] = useState(false);
   const [selectedSearch, setSelectedSearch] = useState();
 
-   const onSearchSubmit = async (term) => {
-     const response = await unsplash.get(
-       "https://api.unsplash.com/search/photos",
-       {
-         params: { query: term },
-       }
-     ).catch(() => setError(true));
-     setImages(response.data.results);
-   };
+  const onSearchSubmit = async (term) => {
+    try {
+      const response = await unsplash.get(
+        "https://api.unsplash.com/search/photos",
+        {
+          params: { query: term },
+        }
+      )
+      setImages(response.data.results)
+    } catch (error) {
+      setError(true)
+    }
+  };
 
    useEffect(() => {
-    // onSearchSubmit('loft')
+    //  onSearchSubmit('test')
    }, [])
 
   return (
     <section>
       <Header />
+      {(error) ? <ErrorPage /> : null}
       <Route
         exact
         path="/"
@@ -53,7 +58,7 @@ const App = () => {
       <Route
         exact
         path="/result"
-        render={({ match }) => {
+        render={() => {
           return (
           <ImageList
             images={images}

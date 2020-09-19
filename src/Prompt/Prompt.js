@@ -69,9 +69,9 @@ const Prompt = ({onSearchSubmit}) => {
           <p className="btn-text">Start Over</p>
         </Link>
         <Link
-          to="/results"
+          to="/result"
           className="btn btn-prompt"
-          onClick={() => console.log(selected)}
+          onClick={() => onSearchSubmit(selected)}
         >
           <p className="btn-text">Next</p>
         </Link>
