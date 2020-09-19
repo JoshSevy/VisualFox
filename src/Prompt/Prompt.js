@@ -6,7 +6,7 @@ import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
 import { options } from '../helpers/dropdownOptions'
 
-const selectOptions = options.fitness
+const selectOptions = options[promptNumber]
 
 
 const Prompt = () => {

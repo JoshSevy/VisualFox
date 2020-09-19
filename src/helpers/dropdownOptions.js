@@ -1,10 +1,10 @@
 export const options = {
   categories: [
-    {label: "Fitness", value: "fitness"},
-    {label: "Dream", value: "dream"},
-    {label: "Healthy Eating", value: "diet"},
-    {label: "Sports", value: "sports"},
-    {label: "Financial Goals", value: "financial"}
+    {label: "Fitness Inspiration", value: "fitness"},
+    {label: "Dream A Bit", value: "dream"},
+    {label: "Healthy Treats", value: "diet"},
+    {label: "Get In the Game", value: "sports"},
+    {label: "Money Money Money", value: "financial"}
   ],
   fitness: [
     {

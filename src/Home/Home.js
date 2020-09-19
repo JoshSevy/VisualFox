@@ -9,7 +9,18 @@ const Home = () => {
   const boardImages = ["https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360"]
 
   const renderExampleImages = boardImages.map(board => {
-    return <div className="image-card"><img className="home-image"src={board} /></div>
+    return (
+      <div 
+        className="image-card"
+        key={Math.random(Date.now()) * 5}
+      >
+        <img
+          className="home-image"
+          src={board}
+          alt="lorem ipsum photos"
+        />
+      </div>
+    );
   })
     
 
