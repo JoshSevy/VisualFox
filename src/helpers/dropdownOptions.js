@@ -95,5 +95,11 @@ export const options = {
       label: "Be Crafty",
       value: "crafts"
     }
+  ],
+  default: [
+    {
+      label: "No options yet!",
+      value: "default"
+    }
   ]
 }

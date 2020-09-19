@@ -7,15 +7,16 @@ import foxLogo from '../assets/logo/foxLogo.png'
 import { options } from '../helpers/dropdownOptions'
 
 const Prompt = ({onSearchSubmit}) => {
-  const [selected, setSelected] = useState(null)
+  const [mainSelection, setMainSelection] = useState('default')
+  const [selected, setSelected] = useState()
   const [promptNumber, setPromptNumber] = useState(0)
   const [boardName, setBoardName] = useState('');
   
-  const selectOptions = options[selected];
+  const selectOptions = options[mainSelection];
 
-  const renderSubCategoryOptions = (!selected === null) ? selectOptions.map(selection => {
+  const renderSubCategoryOptions = selectOptions.map(selection => {
       return <option value={selection.value} label={selection.label} />
-  }) : null;
+  });
 
   const renderMainOptions = options.categories.map((selection) => {
     return <option value={selection.value} label={selection.label} />;
@@ -46,11 +47,11 @@ const Prompt = ({onSearchSubmit}) => {
               onChange={(e) => setBoardName(e.target.value)}
             />
             <label>Select a Board Type</label>
-            <select onChange={(e) => setSelected(e.target.value)}>
+            <select onChange={(e) => setMainSelection(e.target.value)}>
               {renderMainOptions}
             </select>
             <label>SubCategory</label>
-            <select >
+            <select onChange={(e) => setSelected(e.target.value)}>
               {renderSubCategoryOptions}
             </select>
           </article>
