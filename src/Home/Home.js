@@ -18,7 +18,7 @@ const Home = () => {
       <h1>Visualize Your Goals</h1>
       <div className="home-carousel">{renderExampleImages}</div>
       <article className="info-section">
-        <h3>Info Section</h3>
+        <h2>Info Section</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper

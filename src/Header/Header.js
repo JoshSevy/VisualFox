@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import './Header.scss';
-import '../style/buttons.scss';
 import  foxLogo  from '../assets/logo/foxLogo.png';
 
 
