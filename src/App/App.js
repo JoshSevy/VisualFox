@@ -35,9 +35,13 @@ const App = () => {
         return <Home />
       }}
     />
-    <Route exact path="/prompt"
-      render={() => {
-        return <Prompt />
+    <Route exact path="/prompt/"
+      render={({match}) => {
+        return (
+        <Prompt
+        
+         />
+        )
       }}
     />
     <Route exact path="/error"
