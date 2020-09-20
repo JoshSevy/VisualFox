@@ -6,7 +6,7 @@ import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
 import { options, promptHeadings} from '../helpers/dropdownOptions'
 
-const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber}) => {
+const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, setPromptNumber}) => {
   const [mainSelection, setMainSelection] = useState('default')
   const [selected, setSelected] = useState()
   const [boardName, setBoardName] = useState('');
@@ -25,6 +25,8 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber}) =
   const clearPromptState = () => {
     setSelected({});
     setBoardName('');
+    setPromptNumber(1);
+    
   }
 
   return (
@@ -56,7 +58,7 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber}) =
       </article>
       <article className="prompt-buttons-container">
         <Link
-          to="/prompt"
+          to="/prompt/1"
           className="btn btn-prompt"
           onClick={() => clearPromptState()}
         >

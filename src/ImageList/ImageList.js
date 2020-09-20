@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import ImageCard from '../ImageCard/ImageCard'
 import './ImageList.scss';
 
-const ImageList = ({images, selectionMax, imagesMarked}) => {
+const ImageList = ({images, getResultSelections, resultSelections}) => {
 
   const displayImages = images.map((image) => {
     return (
       <ImageCard 
-        key={image.id} 
+        key={image.id}
+        id={image.id} 
         image={image} 
-        imagesMarked={imagesMarked}
-        selectionMax={selectionMax}
+        resultSelections={resultSelections}
+        getResultSelections={getResultSelections}
       />
     ) 
   });

@@ -5,24 +5,24 @@ import ImageList from '../ImageList/ImageList';
 import './Results.scss';
 
 const Results = ({images, getBoardPhotos, promptNumber}) => {
-  const [imagesMarked, setImagesMarked] = useState([]);
+  const [resultSelections, setResultSelections] = useState([]);
 
 
-  const selectionMax = (image) => {
-    const markedArray = imagesMarked;
-    markedArray.push(image);
-    if (markedArray.length > 2) {
-      markedArray.shift();
+  const getResultSelections = (image) => {
+    const maxSelection = resultSelections;
+    maxSelection.push(image);
+    if (maxSelection.length > 2) {
+      maxSelection.shift();
     }
-    setImagesMarked(markedArray);
+    setResultSelections(maxSelection);
   };
 
   return (
     <section className="Results">
       <article className="next-button-container">
-        <Link to='/prompt/{promptNumber}'
+        <Link to={`/prompt/${promptNumber}`}
           className="btn btn-white"
-          onClick={getBoardPhotos(imagesMarked)}
+          onClick={getBoardPhotos(resultSelections)}
         >
           Continue
         </Link>
@@ -30,8 +30,8 @@ const Results = ({images, getBoardPhotos, promptNumber}) => {
       <h3>Choose Two Pictures</h3>
       <ImageList 
         images={images} 
-        imagesMarked={imagesMarked}
-        selectionMax={selectionMax}
+        resultSelections={resultSelections}
+        getResultSelections={getResultSelections}
       />
     </section>
   );

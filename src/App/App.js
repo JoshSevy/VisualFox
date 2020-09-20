@@ -38,9 +38,7 @@ const App = () => {
   }
 
   const getBoardPhotos = (images) => {
-    const photos = boardImages;
-    photos.push(images);
-    setBoardImages(photos);
+      setBoardImages(images);
   }
 
   const getPromptNumber = () => {
@@ -70,6 +68,7 @@ const App = () => {
             getBoardName={getBoardName}
             getPromptNumber={getPromptNumber}
             promptNumber={promptNumber}
+            setPromptNumber={setPromptNumber}
            />
           )
         }}

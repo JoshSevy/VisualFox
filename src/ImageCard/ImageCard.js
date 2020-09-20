@@ -21,11 +21,11 @@ const ImageCard = (props) => {
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
-        className={(true) ? "image": "image selected"}
+        className={(!props.resultSelections.includes(props.image.id)) ? "image": "image selected"}
         ref={imageRef} 
         alt={alt_description} 
         src={urls.small} 
-        onClick={() => props.selectionMax(props.image)}
+        onClick={() => props.getResultSelections(props.image)}
       />
     </div>
   );
