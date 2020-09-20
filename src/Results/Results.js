@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ImageList from '../ImageList/ImageList';
 
-const Results = ({images, getBoardPhotos}) => {
+const Results = ({images, getBoardPhotos, promptNumber}) => {
   const [imagesMarked, setImagesMarked] = useState([]);
 
 
@@ -22,12 +22,18 @@ const Results = ({images, getBoardPhotos}) => {
 
   return (
     <section className="Results">
-      <Link to='/prompt/1' className=".btn .btn-white">Continue</Link>
+      <article className="next-prompt">
+        <Link to='/prompt/{promptNumber}'
+          className=".btn .btn-white"
+          onClick={getBoardPhotos(imagesMarked)}
+        >
+          Continue
+        </Link>
+      </article>
       <h3>Choose Two Pictures</h3>
       <ImageList 
         images={images} 
         imagesMarked={imagesMarked}
-        getBoardPhotos={getBoardPhotos}
         selectionMax={selectionMax}
       />
     </section>

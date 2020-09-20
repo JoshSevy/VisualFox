@@ -29,9 +29,9 @@ const Header = ({resetError}) => {
         <NavLink to="/boards" className="btn btn-white">
           <p className="btn-text">Boards</p>
         </NavLink>
-        <NavLink to="/prompt" className="btn btn-white">
+        {/* <NavLink to="/prompt" className="btn btn-white">
           <p className="btn-text">New Board</p>
-        </NavLink>
+        </NavLink> */}
       </article>
     </section>
   );

@@ -6,10 +6,9 @@ import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
 import { options } from '../helpers/dropdownOptions'
 
-const Prompt = ({onSearchSubmit, getBoardName}) => {
+const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber}) => {
   const [mainSelection, setMainSelection] = useState('default')
   const [selected, setSelected] = useState()
-  const [promptNumber, setPromptNumber] = useState(0)
   const [boardName, setBoardName] = useState('');
   
   const selectOptions = options[mainSelection];
@@ -22,9 +21,9 @@ const Prompt = ({onSearchSubmit, getBoardName}) => {
     return <option value={selection.value} label={selection.label} />;
   });
 
+  
   const clearPromptState = () => {
     setSelected({});
-    setPromptNumber(0);
     setBoardName('');
   }
 
@@ -33,32 +32,27 @@ const Prompt = ({onSearchSubmit, getBoardName}) => {
       <article className="prompt-card">
         <img className="Header-logo" src={foxLogo} />
         <h2>What type of board are we building today?</h2>
-        {promptNumber === 0 ? (
-          <article className="prompt-input">
-            <label>Name your Board:</label>
-            <input
-              type="text"
-              placeholder="Lets name this board"
-              value={boardName}
-              onChange={(e) => setBoardName(e.target.value)}
-            />
-            <label>Select a Board Type</label>
-            <select 
-              onChange={(e) => setMainSelection(e.target.value)}
-            >
-              {renderMainOptions}
-            </select>
-            <label>SubCategory</label>
-            <select 
-              onChange={(e) => setSelected(e.target.value)}
-            >
-              {renderSubCategoryOptions}
-            </select>
-          </article>
-        ) : null}
-        {promptNumber === 1 ? <h2>hello</h2> : null}
-        {promptNumber === 2 ? <h2>hello</h2> : null}
-        {promptNumber === 3 ? <h2>hello</h2> : null}
+        <article className="prompt-input">
+        {promptNumber === 1 ? (
+          <>
+          <label>Name your Board:</label>
+          <input
+            type="text"
+            placeholder="Lets name this board"
+            value={boardName}
+            onChange={(e) => setBoardName(e.target.value)}
+          />
+          </>
+          ): null}
+          <label>Select a Board Type</label>
+          <select onChange={(e) => setMainSelection(e.target.value)}>
+            {renderMainOptions}
+          </select>
+          <label>SubCategory</label>
+          <select onChange={(e) => setSelected(e.target.value)}>
+            {renderSubCategoryOptions}
+          </select>
+        </article>
       </article>
       <article className="prompt-buttons-container">
         <Link
@@ -71,7 +65,10 @@ const Prompt = ({onSearchSubmit, getBoardName}) => {
         <Link
           to="/result"
           className="btn btn-prompt"
-          onClick={() => onSearchSubmit(selected)}
+          onClick={() => {
+            onSearchSubmit(selected);
+            getPromptNumber();
+          }}
           getBoardName={getBoardName(boardName)}
         >
           <p className="btn-text">Next</p>

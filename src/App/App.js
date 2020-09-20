@@ -14,6 +14,7 @@ const App = () => {
   const [boardName, setBoardName] = useState('');
   const [error, setError] = useState(false);
   const [boardImages, setBoardImages] = useState([]);
+  const [promptNumber, setPromptNumber] = useState(1);
 
   const onSearchSubmit = async (term) => {
     try {
@@ -42,6 +43,10 @@ const App = () => {
     setBoardImages(photos)
   }
 
+  const getPromptNumber = () => {
+    setPromptNumber(promptNumber + 1)
+  }
+
   return (
     <section>
       <Header 
@@ -63,6 +68,8 @@ const App = () => {
           <Prompt
             onSearchSubmit={onSearchSubmit}
             getBoardName={getBoardName}
+            getPromptNumber={getPromptNumber}
+            promptNumber={promptNumber}
            />
           )
         }}
@@ -75,6 +82,7 @@ const App = () => {
           <Results
             images={images}
             getBoardPhotos={getBoardPhotos}
+            promptNumber={promptNumber}
            />
            )
         }}
