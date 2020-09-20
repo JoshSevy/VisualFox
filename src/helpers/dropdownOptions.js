@@ -1,105 +1,121 @@
 export const options = {
   categories: [
-    {label: "Fitness Inspiration", value: "fitness"},
-    {label: "Dream A Bit", value: "dream"},
-    {label: "Healthy Treats", value: "diet"},
-    {label: "Get In the Game", value: "sports"},
-    {label: "Money Money Money", value: "financial"}
+    { label: "Choose a Category"},
+    { label: "Fitness Inspiration", value: "fitness" },
+    { label: "Dream A Bit", value: "dream" },
+    { label: "Healthy Treats", value: "diet" },
+    { label: "Get In the Game", value: "sports" },
+    { label: "Money Money Money", value: "financial" },
   ],
   fitness: [
     {
+      label: "Let get our Fitness on",
+    },
+    {
       label: "Lose Weight",
-      value: "lose weight"
+      value: "lose weight",
     },
     {
       label: "Gain Muscle",
-      value: "lift weights"
+      value: "lift weights",
     },
     {
       label: "Be a Better Runner",
-      value: "runnering tips"
+      value: "runnering tips",
     },
     {
       label: "Overall Health",
-      value: "fitness tips"
+      value: "fitness tips",
     },
   ],
   dream: [
     {
+      label: "We all have dreams",
+    },
+    {
       label: "Dream House",
-      value: "luxury houses"
+      value: "luxury houses",
     },
     {
       label: "Dream Car",
-      value: " highend cars"
+      value: " highend cars",
     },
     {
       label: "Dream Vacation",
-      value: "luxury travel"
+      value: "luxury travel",
     },
     {
       label: "Dream Job",
-      value: "best job"
+      value: "best job",
     },
   ],
   diet: [
     {
+      label: "Lets get Healthy",
+    },
+    {
       label: "Healthy",
-      value: "health food"
+      value: "health food",
     },
     {
       label: "Delicouse",
-      value: "beautiful food"
+      value: "beautiful food",
     },
     {
       label: "Keto Insperation",
-      value: "keto"
+      value: "keto",
     },
     {
       label: "Desserts",
-      value: 'healthy desserts'
-    }
+      value: "healthy desserts",
+    },
   ],
   sports: [
     {
+      label: "Lets play",
+    },
+    {
       label: "Soccer",
-      value: 'soccer'
+      value: "soccer",
     },
     {
       label: "FootBall",
-      value: "football"
+      value: "american football",
     },
     {
       label: "Gymnastics",
-      value: "gymnastics"
+      value: "gymnastics",
     },
     {
       label: "Martial Arts",
-      value: "martial arts"
+      value: "martial arts",
     },
   ],
   financial: [
     {
+      label: "Lets fill that piggy bank",
+    },
+    {
       label: "Save Money",
-      value: "money tips"
+      value: "money tips",
     },
     {
       label: "DIY Inspirations",
-      value: "DIY"
+      value: "DIY",
     },
     {
       label: "Sell Items",
-      value: "sell stuff"
+      value: "sell stuff",
     },
     {
       label: "Be Crafty",
-      value: "crafts"
-    }
+      value: "crafts",
+    },
   ],
   default: [
     {
       label: "No options yet!",
-      value: "default"
-    }
-  ]
-}
+      value: "default",
+    },
+  ],
+};

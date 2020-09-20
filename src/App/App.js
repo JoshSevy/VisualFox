@@ -11,10 +11,9 @@ import { Redirect, Route } from 'react-router-dom';
 
 const App = () => {
   const [images, setImages] = useState([]);
-  const [boardName, setBoardName] = useState('')
-  const [board, setBoard] = useState([]);
+  const [boardName, setBoardName] = useState('');
   const [error, setError] = useState(false);
-  const [selectedPhotos, setSelectedPhotos] = useState();
+  const [boardImages, setBoardImages] = useState([]);
 
   const onSearchSubmit = async (term) => {
     try {
@@ -23,8 +22,7 @@ const App = () => {
         {
           params: { query: term },
         }
-      )
-      setImages(response.data.results)
+      ).then(response => setImages(response.data.results))
     } catch (error) {
       setError(true)
     }
@@ -38,8 +36,10 @@ const App = () => {
     setBoardName(name)
   }
 
-  const getSelectedPhoto = (image) => {
-    setSelectedPhotos(image)
+  const getBoardPhotos = (image) => {
+    const photos = boardImages;
+    photos.push(image);
+    setBoardImages(photos)
   }
 
   return (
@@ -57,8 +57,8 @@ const App = () => {
       />
       <Route
         exact
-        path="/prompt"
-        render={({ match }) => {
+        path="/prompt/:prompt"
+        render={() => {
           return (
           <Prompt
             onSearchSubmit={onSearchSubmit}
@@ -74,7 +74,7 @@ const App = () => {
           return (
           <Results
             images={images}
-            getSelectedPhoto={getSelectedPhoto}
+            getBoardPhotos={getBoardPhotos}
            />
            )
         }}

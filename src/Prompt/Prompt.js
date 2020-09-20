@@ -41,19 +41,16 @@ const Prompt = ({onSearchSubmit, getBoardName}) => {
               placeholder="Lets name this board"
               value={boardName}
               onChange={(e) => setBoardName(e.target.value)}
-              required
             />
             <label>Select a Board Type</label>
             <select 
               onChange={(e) => setMainSelection(e.target.value)}
-              required
             >
               {renderMainOptions}
             </select>
             <label>SubCategory</label>
             <select 
               onChange={(e) => setSelected(e.target.value)}
-              required
             >
               {renderSubCategoryOptions}
             </select>
