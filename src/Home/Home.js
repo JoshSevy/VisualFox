@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Board from '../Board/Board'
+
+import { homeImages } from '../helpers/boardsData';
 import './Home.scss';
 import '../style/buttons.scss'
 
 const Home = () => {
 
-  const boardImages = ["https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360"]
+  
 
-  const renderExampleImages = boardImages.map(board => {
+  const renderExampleImages = homeImages.map(board => {
     return (
       <div 
         className="image-card"

@@ -5,10 +5,10 @@ import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
 import { options, promptHeadings} from '../helpers/dropdownOptions'
 
-const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, setPromptNumber}) => {
+const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, resetPrompts, getBuiltBoard, boardName}) => {
   const [mainSelection, setMainSelection] = useState('default')
   const [selected, setSelected] = useState()
-  const [boardName, setBoardName] = useState('');
+  const [name, setName] = useState('');
   
   const selectOptions = options[mainSelection];
 
@@ -20,24 +20,31 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
     return <option value={selection.value} label={selection.label} />;
   });
 
-  const clearPromptState = () => {
-    setSelected({});
-    setBoardName('');
-    setPromptNumber(1);
-  }
-
   const resultsPageLoad = () => {
     getPromptNumber();
-    getBoardName(boardName);
+    getBoardName(name);
     onSearchSubmit(selected);
   }
+
+  const clearPromptState = () => {
+    setSelected({});
+    setName("");
+  };
 
   const finalPromptRender = (
     <article className="final-prompt">
       <img className="final-prompt-logo" src={foxLogo} />
       <h2 className="final-prompt-title">Congrats! You Finished Your Goal Board</h2>
       <article >
-        <Link to="/board" className="btn btn-white">
+        <Link 
+          to={`/board/${boardName}`} 
+          className="btn btn-white"
+          onClick={() => {
+            getBuiltBoard()
+            resetPrompts()
+            clearPromptState()
+            }}
+        >
           Build Your Board!
         </Link>
       </article>
@@ -50,20 +57,20 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
     return (
       <article className="Prompt">
         <article className="prompt-card">
-          
+          <img src={foxLogo} className="prompt-logo"/>
           <h2>{promptHeadings[promptNumber - 1]}</h2>
           <article className="prompt-input">
-          {promptNumber === 1 ? (
-            <>
-            <label>Name your Board:</label>
-            <input
-              type="text"
-              placeholder="Lets name this board"
-              value={boardName}
-              onChange={(e) => setBoardName(e.target.value)}
-            />
-            </>
-            ): null}
+            {promptNumber === 1 ? (
+              <>
+                <label>Name your Board:</label>
+                <input
+                  type="text"
+                  placeholder="Lets name this board"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </>
+            ) : null}
             <label>Select a Category:</label>
             <select onChange={(e) => setMainSelection(e.target.value)}>
               {renderMainOptions}
@@ -78,7 +85,10 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
           <Link
             to="/prompt/1"
             className="btn btn-prompt"
-            onClick={() => clearPromptState()}
+            onClick={() => {
+              resetPrompts();
+              clearPromptState();
+            }}
           >
             <p className="btn-text">Start Over</p>
           </Link>
@@ -91,7 +101,7 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
           </Link>
         </article>
       </article>
-    )
+    );
   }
 }
 

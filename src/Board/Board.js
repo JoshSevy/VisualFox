@@ -1,12 +1,17 @@
 import React from 'react';
 
+import ImageList from '../ImageList/ImageList';
+
 import './Board.scss';
 
-const Board = ({images}) => {
+const Board = ({builtBoard, name}) => {
 
   return(
     <article className="Board">
-    <h2>Here is Your Board!</h2>
+    <h2>{name}</h2>
+    <ImageList 
+      images={builtBoard.images}
+    />
     </article>
     )
 }

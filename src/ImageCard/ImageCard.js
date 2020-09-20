@@ -21,10 +21,10 @@ const ImageCard = (props) => {
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
-        className={(!props.resultSelections.includes(props.image.id)) ? "image": "image selected"}
+        className={(true) ? "image": "image selected"}
         ref={imageRef} 
         alt={alt_description} 
-        src={urls.small} 
+        src={urls.thumb} 
         onClick={() => props.getResultSelections(props.image)}
       />
     </div>
