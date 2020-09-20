@@ -8,7 +8,7 @@ const ImageCard = (props) => {
   useEffect(() => {
     imageRef.current.addEventListener('load', setImageSpans);
   }, []);
-  
+
   const setImageSpans = () => {
     const height = imageRef.current.clientHeight;
     const cardSpans = Math.ceil(height / 20);
@@ -21,10 +21,11 @@ const ImageCard = (props) => {
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
-        className="image"
+        className={(!props.resultSelections.includes(props.image.id)) ? "image": "image selected"}
         ref={imageRef} 
         alt={alt_description} 
-        src={urls.regular} 
+        src={urls.small} 
+        onClick={() => props.getResultSelections(props.image)}
       />
     </div>
   );

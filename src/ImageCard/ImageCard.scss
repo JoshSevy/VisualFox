@@ -1,0 +1,6 @@
+@import '../style/variables.scss';
+
+.image.selected {
+  border: 15px solid $rose-madder;
+  box-sizing: border-box;
+}

@@ -9,7 +9,18 @@ const Home = () => {
   const boardImages = ["https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360", "https://loremflickr.com/640/360"]
 
   const renderExampleImages = boardImages.map(board => {
-    return <div className="image-card"><img className="home-image"src={board} /></div>
+    return (
+      <div 
+        className="image-card"
+        key={Math.random(Date.now()) * 5}
+      >
+        <img
+          className="home-image"
+          src={board}
+          alt="lorem ipsum photos"
+        />
+      </div>
+    );
   })
     
 
@@ -32,7 +43,9 @@ const Home = () => {
       </article>
       <article className="home-start-section">
         <article className="home-start">
-          <Link to="/prompt" className="btn btn-white">
+          <Link 
+            to="/prompt/1" 
+            className="btn btn-white">
             <p className="btn-text">Lets get started!</p>
           </Link>
         </article>
