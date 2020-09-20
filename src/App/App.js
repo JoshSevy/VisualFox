@@ -6,8 +6,8 @@ import Home from '../Home/Home';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Prompt from '../Prompt/Prompt';
 import Results from '../Results/Results';
+import Board from '../Board/Board';
 import { Redirect, Route } from 'react-router-dom';
-
 
 const App = () => {
   const [images, setImages] = useState([]);

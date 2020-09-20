@@ -4,9 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 import './Header.scss';
 import  foxLogo  from '../assets/logo/foxLogo.png';
 
-
 const Header = ({resetError}) => {
-
   return (
     <section>
       <article className="Header">

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
 import { options, promptHeadings} from '../helpers/dropdownOptions'
@@ -21,7 +20,6 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
     return <option value={selection.value} label={selection.label} />;
   });
 
-  
   const clearPromptState = () => {
     setSelected({});
     setBoardName('');
@@ -35,17 +33,16 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
   }
 
   const finalPromptRender = (
-      <article className="final-Prompt">
-        <h2 className="finish-prompt">Congrats! You Finished Your Goal Board</h2>
-        <article className="finish-button-container">
-          <Link to="/board" 
-            className="btn btn-white"
-          >
+    <article className="final-prompt">
+      <img className="final-prompt-logo" src={foxLogo} />
+      <h2 className="final-prompt-title">Congrats! You Finished Your Goal Board</h2>
+      <article >
+        <Link to="/board" className="btn btn-white">
           Build Your Board!
-          </Link>
-        </article>
+        </Link>
       </article>
-  )
+    </article>
+  );
 
   if (promptNumber === 5) {
     return finalPromptRender;
@@ -53,7 +50,7 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
     return (
       <article className="Prompt">
         <article className="prompt-card">
-          <img className="Header-logo" src={foxLogo} />
+          
           <h2>{promptHeadings[promptNumber - 1]}</h2>
           <article className="prompt-input">
           {promptNumber === 1 ? (

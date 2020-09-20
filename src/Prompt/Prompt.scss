@@ -39,3 +39,16 @@
   flex-direction: column;
   padding: 10px;
 }
+
+.final-prompt {
+  text-align: center;
+
+  &-logo {
+    width: 400px;
+  }
+
+  &-title {
+    font-weight: 2rem;
+  }
+}
+

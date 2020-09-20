@@ -7,7 +7,6 @@ import './Results.scss';
 const Results = ({images, getBoardPhotos, promptNumber}) => {
   const [resultSelections, setResultSelections] = useState([]);
 
-
   const getResultSelections = (image) => {
     const maxSelection = resultSelections;
     maxSelection.push(image);
