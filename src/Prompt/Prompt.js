@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -26,58 +26,77 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, se
     setSelected({});
     setBoardName('');
     setPromptNumber(1);
-    
   }
 
-  return (
-    <article className="Prompt">
-      <article className="prompt-card">
-        <img className="Header-logo" src={foxLogo} />
-        <h2>{promptHeadings[promptNumber - 1]}</h2>
-        <article className="prompt-input">
-        {promptNumber === 1 ? (
-          <>
-          <label>Name your Board:</label>
-          <input
-            type="text"
-            placeholder="Lets name this board"
-            value={boardName}
-            onChange={(e) => setBoardName(e.target.value)}
-          />
-          </>
-          ): null}
-          <label>Select a Board Type</label>
-          <select onChange={(e) => setMainSelection(e.target.value)}>
-            {renderMainOptions}
-          </select>
-          <label>SubCategory</label>
-          <select onChange={(e) => setSelected(e.target.value)}>
-            {renderSubCategoryOptions}
-          </select>
+  const resultsPageLoad = () => {
+    getPromptNumber();
+    getBoardName(boardName);
+    onSearchSubmit(selected);
+  }
+
+  const finalPromptRender = (
+      <article className="final-Prompt">
+        <h2 className="finish-prompt">Congrats! You Finished Your Goal Board</h2>
+        <article className="finish-button-container">
+          <Link to="/board" 
+            className="btn btn-white"
+          >
+          Build Your Board!
+          </Link>
         </article>
       </article>
-      <article className="prompt-buttons-container">
-        <Link
-          to="/prompt/1"
-          className="btn btn-prompt"
-          onClick={() => clearPromptState()}
-        >
-          <p className="btn-text">Start Over</p>
-        </Link>
-        <Link
-          to="/result"
-          className="btn btn-prompt"
-          onClick={() => {
-            onSearchSubmit(selected);
-            getPromptNumber();
-          }}
-          getBoardName={getBoardName(boardName)}
-        >
-          <p className="btn-text">Next</p>
-        </Link>
+  )
+
+  if (promptNumber === 5) {
+    return finalPromptRender;
+  } else {
+    return (
+      <article className="Prompt">
+        <article className="prompt-card">
+          <img className="Header-logo" src={foxLogo} />
+          <h2>{promptHeadings[promptNumber - 1]}</h2>
+          <article className="prompt-input">
+          {promptNumber === 1 ? (
+            <>
+            <label>Name your Board:</label>
+            <input
+              type="text"
+              placeholder="Lets name this board"
+              value={boardName}
+              onChange={(e) => setBoardName(e.target.value)}
+            />
+            </>
+            ): null}
+            <label>Select a Category:</label>
+            <select onChange={(e) => setMainSelection(e.target.value)}>
+              {renderMainOptions}
+            </select>
+            <label>SubCategory</label>
+            <select onChange={(e) => setSelected(e.target.value)}>
+              {renderSubCategoryOptions}
+            </select>
+          </article>
+        </article>
+        <article className="prompt-buttons-container">
+          <Link
+            to="/prompt/1"
+            className="btn btn-prompt"
+            onClick={() => clearPromptState()}
+          >
+            <p className="btn-text">Start Over</p>
+          </Link>
+          <Link
+            to={`/result/${selected}`}
+            className="btn btn-prompt"
+            onClick={() => resultsPageLoad()}
+          >
+            <p className="btn-text">Next</p>
+          </Link>
+        </article>
       </article>
-    </article>
-  );
+    )
+  }
 }
 
-export default Prompt
+export default Prompt;
+

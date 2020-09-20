@@ -11,12 +11,12 @@ import { Redirect, Route } from 'react-router-dom';
 
 const App = () => {
   const [images, setImages] = useState([]);
-  const [boardName, setBoardName] = useState('');
+  const [boardName, setBoardName] = useState();
   const [error, setError] = useState(false);
   const [boardImages, setBoardImages] = useState([]);
   const [promptNumber, setPromptNumber] = useState(1);
 
-  const onSearchSubmit = async (term) => {
+  const onSearchSubmit = async (term, e) => {
     try {
       const response = await unsplash.get(
         "https://api.unsplash.com/search/photos",
@@ -34,11 +34,13 @@ const App = () => {
   };
 
   const getBoardName = (name) => {
-    setBoardName(name)
+    const persistName = boardName || name;
+    setBoardName(persistName)
   }
 
   const getBoardPhotos = (images) => {
-      setBoardImages(images);
+    const persistPhotos = [...images, ...boardImages] || [images]
+      setBoardImages(persistPhotos);
   }
 
   const getPromptNumber = () => {
@@ -75,8 +77,8 @@ const App = () => {
       />
       <Route
         exact
-        path="/result"
-        render={() => {
+        path="/result/:selected"
+        render={({match}) => {
           return (
           <Results
             images={images}

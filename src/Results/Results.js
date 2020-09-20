@@ -22,7 +22,7 @@ const Results = ({images, getBoardPhotos, promptNumber}) => {
       <article className="next-button-container">
         <Link to={`/prompt/${promptNumber}`}
           className="btn btn-white"
-          onClick={getBoardPhotos(resultSelections)}
+          onClick={() => getBoardPhotos(resultSelections)}
         >
           Continue
         </Link>
