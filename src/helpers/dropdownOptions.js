@@ -119,3 +119,10 @@ export const options = {
     },
   ],
 };
+
+export const promptHeadings = [
+  "What type of board are we building today?",
+  "Great Work Lets Keep Building",
+  "Almost There Keep it Up",
+  "Last Prompt Home Stretch",
+];

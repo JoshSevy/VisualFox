@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
-import { options } from '../helpers/dropdownOptions'
+import { options, promptHeadings} from '../helpers/dropdownOptions'
 
 const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber}) => {
   const [mainSelection, setMainSelection] = useState('default')
@@ -31,7 +31,7 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber}) =
     <article className="Prompt">
       <article className="prompt-card">
         <img className="Header-logo" src={foxLogo} />
-        <h2>What type of board are we building today?</h2>
+        <h2>{promptHeadings[promptNumber - 1]}</h2>
         <article className="prompt-input">
         {promptNumber === 1 ? (
           <>

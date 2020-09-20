@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import unsplash from '../helpers/unsplash';
 import Header from '../Header/Header';
@@ -37,14 +37,14 @@ const App = () => {
     setBoardName(name)
   }
 
-  const getBoardPhotos = (image) => {
+  const getBoardPhotos = (images) => {
     const photos = boardImages;
-    photos.push(image);
-    setBoardImages(photos)
+    photos.push(images);
+    setBoardImages(photos);
   }
 
   const getPromptNumber = () => {
-    setPromptNumber(promptNumber + 1)
+    setPromptNumber(promptNumber + 1);
   }
 
   return (

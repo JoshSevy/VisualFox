@@ -21,7 +21,7 @@ const ImageCard = (props) => {
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
-        className={(!props.imagesMarked.includes(props.image)) ? "image": "image selected"}
+        className={(true) ? "image": "image selected"}
         ref={imageRef} 
         alt={alt_description} 
         src={urls.small} 
