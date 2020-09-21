@@ -1,5 +1,7 @@
+@import '../style/variables.scss';
+
 .Home {
-  text-align: center;
+  @include pagePadding;
 }
 
 .home-carousel {

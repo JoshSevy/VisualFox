@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+
 import './ImageCard.scss';
 
 const ImageCard = (props) => {
   const [spans, setSpans] = useState(0);
+  const [isCardMarked, setIsCardMarked] = useState(false)
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -16,19 +19,29 @@ const ImageCard = (props) => {
     setSpans(cardSpans);
   };
 
-  const { alt_description, urls } = props.image;
+  const { alt_description, urls, id } = props.image;
 
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
-        className={(!props.resultSelections.includes(props.image.id)) ? "image": "image selected"}
+        className={(!isCardMarked) ? "image": "image selected"}
+        id={id}
         ref={imageRef} 
         alt={alt_description} 
-        src={urls.small} 
-        onClick={() => props.getResultSelections(props.image)}
+        src={urls.thumb} 
+        onClick={() => {
+          setIsCardMarked(!isCardMarked);
+          props.getResultSelections(props.image)}}
       />
     </div>
   );
 };
 
 export default ImageCard;
+
+ImageCard.propTypes = {
+  image: PropTypes.object,
+  id: PropTypes.string,
+  getResultSelections: PropTypes.func,
+  resultSelection: PropTypes.array,
+};

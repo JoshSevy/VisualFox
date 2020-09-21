@@ -1,8 +1,7 @@
 @import '../style/buttons.scss';
 
 .Results {
-  text-align: center;
-  width: 100%;
+  @include pagePadding;
 }
 
 .next-button-container {

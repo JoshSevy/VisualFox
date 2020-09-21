@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import ImageList from '../ImageList/ImageList';
 import './Results.scss';
 
 const Results = ({images, getBoardPhotos, promptNumber}) => {
   const [resultSelections, setResultSelections] = useState([]);
-
 
   const getResultSelections = (image) => {
     const maxSelection = resultSelections;
@@ -38,3 +38,9 @@ const Results = ({images, getBoardPhotos, promptNumber}) => {
 }
 
 export default Results;
+
+Results.propTypes = {
+  images: PropTypes.array,
+  getBoardPhotos: PropTypes.func,
+  promptNumber: PropTypes.number,
+}

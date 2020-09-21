@@ -18,9 +18,10 @@
 
   &-links {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 30px;
+    flex-direction: row-reverse;
+    width: 35%;
+    position: absolute;
+    right: 30px;
   }
 }
 

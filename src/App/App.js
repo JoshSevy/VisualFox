@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { Redirect, Route } from "react-router-dom";
 
-import unsplash from '../helpers/unsplash';
+import { unsplashResponse } from '../helpers/unsplash';
+
 import Header from '../Header/Header';
 import Home from '../Home/Home';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Prompt from '../Prompt/Prompt';
 import Results from '../Results/Results';
-import { Redirect, Route } from 'react-router-dom';
-
+import Board from '../Board/Board';
+import BoardsDisplay from '../BoardsDisplay/BoardsDisplay';
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -15,22 +17,51 @@ const App = () => {
   const [error, setError] = useState(false);
   const [boardImages, setBoardImages] = useState([]);
   const [promptNumber, setPromptNumber] = useState(1);
+  const [builtBoard, setBuiltBoard] = useState({});
+  const [savedBoards, setSavedBoards] = useState([]);
 
-  const onSearchSubmit = async (term, e) => {
+  const onSearchSubmit = async (term) => {
     try {
-      const response = await unsplash.get(
-        "https://api.unsplash.com/search/photos",
-        {
-          params: { query: term },
-        }
-      ).then(response => setImages(response.data.results))
+      await unsplashResponse(term).then(response => setImages(response.data.results));
     } catch (error) {
       setError(true)
     }
   };
 
+  const getBuiltBoard = () => {
+    const board = {
+      id: Date.now(),
+      name: boardName,
+      images: boardImages
+    }
+    setBuiltBoard(board)
+  }
+
+  const saveBuiltBoard = () => {
+    const boards = [...savedBoards, builtBoard] || [builtBoard];
+    setSavedBoards(boards);
+    setBuiltBoard({})
+  }
+
+  const removeBuiltBoard = (e) => {
+    const boards = savedBoards;
+    const index = boards.indexOf(e.target.id);
+    boards.splice(index, 1);
+    setSavedBoards(boards)
+  }
+
+  const findSavedBoardByName = (name) => {
+    return savedBoards.find(board => board.name === name);
+  }
+
   const resetError = () => {
     setError(false)
+  };
+
+  const resetPrompts = () => {
+    setBoardName("");
+    setPromptNumber(1);
+    setBoardImages([]);
   };
 
   const getBoardName = (name) => {
@@ -49,15 +80,13 @@ const App = () => {
 
   return (
     <section>
-      <Header 
-        resetError={resetError}
-      />
-      {(error) ? <Redirect to="/error"/>: null}
+      <Header resetError={resetError} />
+      {error ? <Redirect to="/error" /> : null}
       <Route
         exact
         path="/"
         render={() => {
-          return <Home />
+          return <Home />;
         }}
       />
       <Route
@@ -65,34 +94,77 @@ const App = () => {
         path="/prompt/:prompt"
         render={() => {
           return (
-          <Prompt
-            onSearchSubmit={onSearchSubmit}
-            getBoardName={getBoardName}
-            getPromptNumber={getPromptNumber}
-            promptNumber={promptNumber}
-            setPromptNumber={setPromptNumber}
-           />
-          )
+            <Prompt
+              onSearchSubmit={onSearchSubmit}
+              getBoardName={getBoardName}
+              getPromptNumber={getPromptNumber}
+              promptNumber={promptNumber}
+              getBuiltBoard={getBuiltBoard}
+              resetPrompts={resetPrompts}
+              boardName={boardName}
+            />
+          );
         }}
       />
       <Route
         exact
         path="/result/:selected"
-        render={({match}) => {
+        render={({ match }) => {
           return (
-          <Results
-            images={images}
-            getBoardPhotos={getBoardPhotos}
-            promptNumber={promptNumber}
-           />
-           )
+            <Results
+              images={images}
+              getBoardPhotos={getBoardPhotos}
+              promptNumber={promptNumber}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
+        path="/board/:name"
+        render={() => {
+          return (
+            <Board
+              builtBoard={builtBoard}
+              saveBuiltBoard={saveBuiltBoard}
+              resetPrompts={resetPrompts}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
+        path="/savedboards"
+        render={() => {
+          return (
+            <BoardsDisplay
+              savedBoards={savedBoards}
+              removeBuiltBoard={removeBuiltBoard}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
+        path="/savedboards/:name"
+        render={({match}) => {
+          const selectedBoard = findSavedBoardByName(match.params.name);
+          return (
+            (selectedBoard) ? 
+            <Board 
+              selectedBoard={selectedBoard}
+              resetPrompts={resetPrompts}
+              removeBuiltBoard={removeBuiltBoard}
+            /> :
+            <ErrorPage />
+          );
         }}
       />
       <Route
         exact
         path="/error"
         render={() => {
-          return <ErrorPage />
+          return <ErrorPage />;
         }}
       />
     </section>

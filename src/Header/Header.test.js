@@ -1,9 +1,10 @@
 import React from 'react'
-import { screen, fireEvent, render } from '@testing-library/react'
+import { screen, render } from '@testing-library/react'
+import { MemoryRouter } from "react-router-dom";
 import '@testing-library/jest-dom';
 
 import Header from './Header'
-import { MemoryRouter } from 'react-router-dom';
+
 
 describe('Header Component', () => {
   it('should render header correctly', () => {
@@ -13,8 +14,12 @@ describe('Header Component', () => {
       </MemoryRouter>
     )
    
-    const title = screen.getByRole('heading', {name: /visualize your goals/i})
-    expect(title).toBeInTheDocument()
-    
+    const title = screen.getByRole('heading', {name: /visualfox/i});
+    const homeBtn = screen.getByRole('link', {name: /home/i});
+    const boardBtn = screen.getByRole('link', {name: /boards/i});
+
+    expect(title).toBeInTheDocument();
+    expect(homeBtn).toBeInTheDocument();
+    expect(boardBtn).toBeInTheDocument();
   })
 })
