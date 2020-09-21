@@ -6,28 +6,53 @@ import ImageList from '../ImageList/ImageList';
 
 import './Board.scss';
 
-const Board = ({builtBoard, saveBuiltBoard, resetPrompts}) => {
+const Board = ({builtBoard, saveBuiltBoard, resetPrompts, selectedBoard, deleteBoard}) => {
 
   return (
     <article className="Board">
       <h2>{builtBoard.name}</h2>
       <article className="board-btn-container">
-        <Link 
-          to="/" 
-          className="btn btn-white"
-          onClick={() => saveBuiltBoard()}
-        >
-          Save Board
-        </Link>
-        <Link 
-          to="/" 
-          className="btn btn-white"
-          onClick={() => resetPrompts()}
-        >
-          Delete Board
-        </Link>
+        {!selectedBoard ? (
+          <>
+            <Link
+              to="/"
+              className="btn btn-white"
+              onClick={() => saveBuiltBoard()}
+            >
+              Save Board
+            </Link>
+            <Link
+              to="/prompt/1"
+              className="btn btn-white"
+              onClick={() => resetPrompts()}
+            >
+              Start Over
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/prompt/1"
+              className="btn btn-white"
+              onClick={() => resetPrompts()}
+            >
+              Build Another Board
+            </Link>
+            <Link
+              to="/"
+              className="btn btn-white"
+              onClick={() => deleteBoard()}
+            >
+              Delete Board
+            </Link>
+          </>
+        )}
       </article>
-      <ImageList images={builtBoard.images} />
+      {!selectedBoard ? (
+        <ImageList images={builtBoard.images} />
+      ) : (
+        <ImageList images={selectedBoard.images} />
+      )}
     </article>
   );
 }

@@ -148,11 +148,12 @@ const App = () => {
         exact
         path="/savedboards/:name"
         render={({match}) => {
-          const savedBoard = findSavedBoardByName(match.params.name);
           return (
+            (match.params.name === undefined) ? 
             <Board 
-              builtBoard={savedBoard}
-            />
+              selectedBoard={findSavedBoardByName(match.params.name)}
+            /> :
+            <ErrorPage />
           );
         }}
       />
