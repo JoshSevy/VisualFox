@@ -17,7 +17,7 @@ describe('Home Component', () => {
     const button = screen.getByRole('link', {name: /lets get started!/i})
 
     expect(title).toBeInTheDocument()
-    expect(images).toHaveLength(11)
+    expect(images).toHaveLength(8)
     expect(infoSection).toBeInTheDocument()
     expect(button).toBeInTheDocument()
   })
