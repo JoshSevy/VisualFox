@@ -22,12 +22,15 @@ describe('ImageCard Component', () => {
           image={image}
           id={image.id}
           key={image.id}
-          image={image}
           resultSelections={mockResults}
           getResultSelections={jest.fn()}
         />
       </MemoryRouter>
     );
+
+    const imagePopulates = screen.getByRole('img');
+
+    expect(imagePopulates).toBeInTheDocument();
 
   })
 })

@@ -2,6 +2,7 @@ import React from 'react';
 import { screen, render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+
 import { testDataBoards } from '../helpers/boardsData';
 
 import Board from './Board';

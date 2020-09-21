@@ -6,7 +6,7 @@ import ImageList from '../ImageList/ImageList';
 
 import './Board.scss';
 
-const Board = ({builtBoard, saveBuiltBoard, removeBuiltBoard}) => {
+const Board = ({builtBoard, saveBuiltBoard, resetPrompts}) => {
 
   return (
     <article className="Board">
@@ -22,7 +22,7 @@ const Board = ({builtBoard, saveBuiltBoard, removeBuiltBoard}) => {
         <Link 
           to="/" 
           className="btn btn-white"
-          onClick={(e) => removeBuiltBoard(e)}
+          onClick={() => resetPrompts()}
         >
           Delete Board
         </Link>

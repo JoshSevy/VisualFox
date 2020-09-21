@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render, fireEvent, waitFor } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import Home from './Home';

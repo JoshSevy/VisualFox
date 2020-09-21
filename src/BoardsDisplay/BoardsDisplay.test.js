@@ -1,7 +1,8 @@
 import React from 'react';
-import { screen, fireEvent, render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+
 import BoardsDisplay from './BoardsDisplay';
 
 describe('BoardsDisplay Component', () => {

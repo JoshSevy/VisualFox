@@ -6,13 +6,13 @@ import foxLogo from '../assets/logo/foxLogo.png'
 const ErrorPage = () => {
   return (
     <article className="ErrorPage">
-      <h2>Sorry!</h2>
+      <h2>Oh No! Sorry!</h2>
       <img 
         className="error-logo"
         alt="Visual fox logo orange fox head"
         src={foxLogo}
       />
-      <h2>Add Error Message for user</h2>
+      <h2>Looks Like Something Went Wrong On Our End</h2>
     </article>
   )
 }

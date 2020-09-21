@@ -18,7 +18,7 @@ const App = () => {
   const [boardImages, setBoardImages] = useState([]);
   const [promptNumber, setPromptNumber] = useState(1);
   const [builtBoard, setBuiltBoard] = useState({});
-  const [savedBoards, setSavedBoards] = useState([]);
+  const [savedBoards, setSavedBoards] = useState();
 
   const onSearchSubmit = async (term) => {
     try {
@@ -58,6 +58,7 @@ const App = () => {
     setBoardName("");
     setPromptNumber(1);
     setBoardImages([]);
+    setBuiltBoard({});
   };
 
   const getBoardName = (name) => {
@@ -123,7 +124,7 @@ const App = () => {
             <Board
               builtBoard={builtBoard}
               saveBuiltBoard={saveBuiltBoard}
-              removeBuiltBoard={removeBuiltBoard}
+              resetPrompts={resetPrompts}
             />
           );
         }}

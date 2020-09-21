@@ -5,6 +5,7 @@ import './ImageCard.scss';
 
 const ImageCard = (props) => {
   const [spans, setSpans] = useState(0);
+  const [isCardMarked, setIsCardMarked] = useState(false)
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -23,12 +24,14 @@ const ImageCard = (props) => {
   return (
     <div style={{gridRowEnd: `span ${spans}`}}>
       <img 
-        className={(true) ? "image": "image selected"}
+        className={(!isCardMarked) ? "image": "image selected"}
         id={id}
         ref={imageRef} 
         alt={alt_description} 
         src={urls.thumb} 
-        onClick={() => props.getResultSelections(props.image)}
+        onClick={() => {
+          setIsCardMarked(!isCardMarked);
+          props.getResultSelections(props.image)}}
       />
     </div>
   );
