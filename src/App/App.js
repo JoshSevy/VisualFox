@@ -18,7 +18,7 @@ const App = () => {
   const [boardImages, setBoardImages] = useState([]);
   const [promptNumber, setPromptNumber] = useState(1);
   const [builtBoard, setBuiltBoard] = useState({});
-  const [savedBoards, setSavedBoards] = useState();
+  const [savedBoards, setSavedBoards] = useState([]);
 
   const onSearchSubmit = async (term) => {
     try {
@@ -50,6 +50,10 @@ const App = () => {
     setSavedBoards(boards)
   }
 
+  const findSavedBoardByName = (name) => {
+    return savedBoards.find(board => board.name === name);
+  }
+
   const resetError = () => {
     setError(false)
   };
@@ -58,7 +62,6 @@ const App = () => {
     setBoardName("");
     setPromptNumber(1);
     setBoardImages([]);
-    setBuiltBoard({});
   };
 
   const getBoardName = (name) => {
@@ -137,6 +140,18 @@ const App = () => {
             <BoardsDisplay
               savedBoards={savedBoards}
               removeBuiltBoard={removeBuiltBoard}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
+        path="/savedboards/:name"
+        render={({match}) => {
+          const savedBoard = findSavedBoardByName(match.params.name);
+          return (
+            <Board 
+              builtBoard={savedBoard}
             />
           );
         }}

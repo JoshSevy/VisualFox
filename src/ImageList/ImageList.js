@@ -17,6 +17,7 @@ const ImageList = ({images, getResultSelections, resultSelections}) => {
   });
 
   return <div className="image-list">{displayImages}</div>;
+
 };
 
 export default ImageList

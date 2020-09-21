@@ -20,7 +20,7 @@ const BoardsDisplay = ({savedBoards, removeBuiltBoard}) => {
             onDoubleClick={(e) => removeBuiltBoard(e)}
           />
         </div>
-        <Link to={`/board/${board.name}`} className="btn btn-white">
+        <Link to={`/savedboards/${board.name}`} className="btn btn-white">
           View Me!
         </Link>
       </article>
