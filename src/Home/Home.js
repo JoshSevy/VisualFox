@@ -28,23 +28,17 @@ const Home = () => {
       <h1>Visualize Your Goals</h1>
       <div className="home-carousel">{renderExampleImages}</div>
       <article className="info-section">
-        <h2>Info Section</h2>
+        <h2>But Why?</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper
-          auctor neque vitae tempus. Non odio euismod lacinia at quis risus sed.
-          Facilisis gravida neque convallis a cras. Urna id volutpat lacus
-          laoreet. Sit amet dictum sit amet justo donec enim diam. Habitant
-          morbi tristique senectus et netus. Ultrices neque ornare aenean
-          euismod. Morbi tempus iaculis urna id volutpat lacus. Mauris in
-          aliquam sem fringilla.
+          When you take the time to figure out what you want and dream about
+          what would be the most awesome achievement you can imagine, then know
+          that to make it a reality you will need to become the kind of person
+          who has done everything to realize their dream. Create a vision board that captures the life, the qualities and the essence of who you will be when you’ve reached your goal.
         </p>
       </article>
       <article className="home-start-section">
         <article className="home-start">
-          <Link 
-            to="/prompt/1" 
-            className="btn btn-white">
+          <Link to="/prompt/1" className="btn btn-white">
             <p className="btn-text">Lets get started!</p>
           </Link>
         </article>
