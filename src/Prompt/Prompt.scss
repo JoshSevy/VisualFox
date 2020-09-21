@@ -2,6 +2,7 @@
 @import '../style/buttons.scss';
 
 .Prompt {
+  @include pagePadding;
   display: flex;
   flex-direction: column;
   align-items: center;

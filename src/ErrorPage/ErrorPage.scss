@@ -1,6 +1,7 @@
+@import '../style/variables.scss';
+
 .ErrorPage {
-  width: 100%;
-  text-align: center;
+  @include pagePadding;
   font-size: 1rem;
 }
 

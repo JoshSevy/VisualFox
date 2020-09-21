@@ -15,5 +15,7 @@ describe('App Component', () => {
 
     const title = screen.getByRole('heading', {name: /visualize your goals/i})
     expect(title).toBeInTheDocument()
+    screen.debug()
   })
+
 })

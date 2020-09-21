@@ -6,16 +6,24 @@ import ImageList from '../ImageList/ImageList';
 
 import './Board.scss';
 
-const Board = ({builtBoard}) => {
+const Board = ({builtBoard, saveBuiltBoard, removeBuiltBoard}) => {
 
   return (
     <article className="Board">
       <h2>{builtBoard.name}</h2>
       <article className="board-btn-container">
-        <Link to="/" className="btn btn-white">
+        <Link 
+          to="/" 
+          className="btn btn-white"
+          onClick={() => saveBuiltBoard()}
+        >
           Save Board
         </Link>
-        <Link to="/" className="btn btn-white">
+        <Link 
+          to="/" 
+          className="btn btn-white"
+          onClick={(e) => removeBuiltBoard(e)}
+        >
           Delete Board
         </Link>
       </article>
@@ -27,5 +35,7 @@ const Board = ({builtBoard}) => {
 export default Board;
 
 Board.propTypes = {
-  builtBoard: PropTypes.object
+  builtBoard: PropTypes.object,
+  saveBuiltBoard: PropTypes.func,
+  removeBuiltBoard: PropTypes.func,
 }

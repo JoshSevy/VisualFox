@@ -42,5 +42,5 @@ export default Results;
 Results.propTypes = {
   images: PropTypes.array,
   getBoardPhotos: PropTypes.func,
-  promptNumber: PropTypes.number
+  promptNumber: PropTypes.number,
 }

@@ -16,7 +16,8 @@ const App = () => {
   const [error, setError] = useState(false);
   const [boardImages, setBoardImages] = useState([]);
   const [promptNumber, setPromptNumber] = useState(1);
-  const [builtBoard, setBuiltBoard] = useState({})
+  const [builtBoard, setBuiltBoard] = useState({});
+  const [savedBoards, setSavedBoards] = useState([]);
 
   const onSearchSubmit = async (term) => {
     try {
@@ -25,7 +26,8 @@ const App = () => {
         {
           params: { query: term },
         }
-      ).then(() => setImages(response.data.results))
+      )
+      setImages(response.data.results)
     } catch (error) {
       setError(true)
     }
@@ -38,6 +40,18 @@ const App = () => {
       images: boardImages
     }
     setBuiltBoard(board)
+  }
+
+  const saveBuiltBoard = () => {
+    setSavedBoards(builtBoard);
+    setBuiltBoard({})
+  }
+
+  const removeBuiltBoard = (e) => {
+    const boards = savedBoards;
+    const index = boards.indexOf(e.target.id);
+    boards.splice(index, 1);
+    setSavedBoards(boards)
   }
 
   const resetError = () => {
@@ -112,6 +126,8 @@ const App = () => {
           return (
             <Board
               builtBoard={builtBoard}
+              saveBuiltBoard={saveBuiltBoard}
+              removeBuiltBoard={removeBuiltBoard}
             />
           );
         }}

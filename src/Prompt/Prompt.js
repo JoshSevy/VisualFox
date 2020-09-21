@@ -119,6 +119,6 @@ Prompt.propTypes = {
   promptNumber: PropTypes.number,
   resetPrompts: PropTypes.func,
   getBuiltBoard: PropTypes.func,
-  boardName: PropTypes.string
+  boardName: PropTypes.string,
 }
   
