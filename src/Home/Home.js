@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Board from '../Board/Board'
-
 import { homeImages } from '../helpers/boardsData';
 import './Home.scss';
 import '../style/buttons.scss'
 
 const Home = () => {
-
-  
 
   const renderExampleImages = homeImages.map(board => {
     return (
@@ -20,7 +16,7 @@ const Home = () => {
         <img
           className="home-image"
           src={board}
-          alt="lorem ipsum photos"
+          alt="display images food beards and motivating images"
         />
       </div>
     );

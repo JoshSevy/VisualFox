@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './Prompt.scss';
 import foxLogo from '../assets/logo/foxLogo.png'
@@ -33,7 +34,11 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
 
   const finalPromptRender = (
     <article className="final-prompt">
-      <img className="final-prompt-logo" src={foxLogo} />
+      <img 
+        className="final-prompt-logo" 
+        src={foxLogo} 
+        alt="orange fox drawing"
+      />
       <h2 className="final-prompt-title">Congrats! You Finished Your Goal Board</h2>
       <article >
         <Link 
@@ -57,7 +62,7 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
     return (
       <article className="Prompt">
         <article className="prompt-card">
-          <img src={foxLogo} className="prompt-logo"/>
+          <img src={foxLogo} className="prompt-logo" alt="orange fox drawing" />
           <h2>{promptHeadings[promptNumber - 1]}</h2>
           <article className="prompt-input">
             {promptNumber === 1 ? (
@@ -107,3 +112,13 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
 
 export default Prompt;
 
+Prompt.propTypes = {
+  onSearchSubmit: PropTypes.func,
+  getBoardName: PropTypes.func,
+  getPromptNumber: PropTypes.func,
+  promptNumber: PropTypes.number,
+  resetPrompts: PropTypes.func,
+  getBuiltBoard: PropTypes.func,
+  boardName: PropTypes.string
+}
+  

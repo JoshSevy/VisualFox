@@ -10,7 +10,6 @@ import Prompt from '../Prompt/Prompt';
 import Results from '../Results/Results';
 import Board from '../Board/Board';
 
-
 const App = () => {
   const [images, setImages] = useState([]);
   const [boardName, setBoardName] = useState();
@@ -26,7 +25,7 @@ const App = () => {
         {
           params: { query: term },
         }
-      ).then(response => setImages(response.data.results))
+      ).then(() => setImages(response.data.results))
     } catch (error) {
       setError(true)
     }
@@ -109,10 +108,9 @@ const App = () => {
       <Route
         exact
         path="/board/:name"
-        render={({ match }) => {
+        render={() => {
           return (
             <Board
-              name={match.params.name}
               builtBoard={builtBoard}
             />
           );
