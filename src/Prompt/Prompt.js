@@ -14,11 +14,23 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
   const selectOptions = options[mainSelection];
 
   const renderSubCategoryOptions = selectOptions.map(selection => {
-      return <option value={selection.value} label={selection.label} />
+      return (
+        <option 
+          key={selection.label} 
+          value={selection.value} 
+          label={selection.label} 
+        />
+      )
   });
 
   const renderMainOptions = options.categories.map((selection) => {
-    return <option value={selection.value} label={selection.label} />;
+    return (
+      <option
+        key={selection.label}
+        value={selection.value}
+        label={selection.label}
+      />
+    );
   });
 
   const resultsPageLoad = () => {
@@ -76,12 +88,12 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
                 />
               </>
             ) : null}
-            <label>Select a Category:</label>
-            <select onChange={(e) => setMainSelection(e.target.value)}>
+            <label htmlFor="category">Select a Category:</label>
+            <select id="category" onChange={(e) => setMainSelection(e.target.value)}>
               {renderMainOptions}
             </select>
-            <label>SubCategory</label>
-            <select onChange={(e) => setSelected(e.target.value)}>
+            <label htmlFor="sub-category">SubCategory</label>
+            <select id="sub-category" onChange={(e) => setSelected(e.target.value)}>
               {renderSubCategoryOptions}
             </select>
           </article>

@@ -13,8 +13,9 @@ describe('Header Component', () => {
       </MemoryRouter>
     )
    
-    const title = screen.getByRole('heading', {name: /visualize your goals/i})
+    const title = screen.getByRole('heading', {name: /visualfox/i})
     expect(title).toBeInTheDocument()
     
+    screen.debug()
   })
 })

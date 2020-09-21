@@ -13,7 +13,7 @@ describe('Home Component', () => {
     )
     const title = screen.getByRole('heading', {name: /visualize your goals/i})
     const images = screen.getAllByRole('img')
-    const infoSection = screen.getByRole('heading', {name: /info section/i})
+    const infoSection = screen.getByRole('heading', {name: /but why?/i})
     const button = screen.getByRole('link', {name: /lets get started!/i})
 
     expect(title).toBeInTheDocument()
@@ -21,19 +21,4 @@ describe('Home Component', () => {
     expect(infoSection).toBeInTheDocument()
     expect(button).toBeInTheDocument()
   })
-// might be a better integration test in app
-  // it('should navagate to prompt page on click', async () => {
-  //   render(
-  //     <MemoryRouter>
-  //       <Home />
-  //     </MemoryRouter>
-  //   )
-
-  //   const button = screen.getByRole('link', {name: /lets get started!/i});
-
-  //   fireEvent.click(button);
-
-  //   const promptTitle = await waitFor( ()=> screen.getByRole('heading', {name: "What type of board are we building today?"}))
-
-  // })
 })

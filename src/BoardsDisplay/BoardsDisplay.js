@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import foxLogo from '../assets/logo/foxLogo.png'
 import './BoardsDisplay.scss';
 
 const BoardsDisplay = ({savedBoards, removeBuiltBoard}) => {
-
 
   const renderBoards = (savedBoards) ?
   savedBoards.map(board => {
