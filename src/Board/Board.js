@@ -15,7 +15,7 @@ const Board = ({builtBoard, saveBuiltBoard, resetPrompts, selectedBoard, removeB
         {!selectedBoard ? (
           <>
             <Link
-              to="/"
+              to="/savedboards"
               className="btn btn-white"
               onClick={() => saveBuiltBoard()}
             >
@@ -61,6 +61,8 @@ export default Board;
 
 Board.propTypes = {
   builtBoard: PropTypes.object,
+  selectedBoard: PropTypes.object,
   saveBuiltBoard: PropTypes.func,
+  resetPrompts: PropTypes.func,
   removeBuiltBoard: PropTypes.func,
 }

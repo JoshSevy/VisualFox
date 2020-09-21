@@ -19,6 +19,8 @@ describe('BoardsDisplay Component', () => {
     const boardTitle = screen.getByRole('heading', {name: /lets do it/i});
     const foxLogo = screen.getAllByRole('img');
 
+    screen.debug()
+
     expect(title).toBeInTheDocument();
     expect(boardTitle).toBeInTheDocument();
     expect(foxLogo).toHaveLength(2);
@@ -27,7 +29,7 @@ describe('BoardsDisplay Component', () => {
   it('should render message if no boards are saved', () => {
     render(
       <MemoryRouter>
-        <BoardsDisplay />
+        <BoardsDisplay savedBoards={[]}/>
       </MemoryRouter>
     )
     

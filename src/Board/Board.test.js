@@ -16,7 +16,7 @@ describe('Board Component', () => {
     );
 
     const saveButton = screen.getByRole("link", { name: /save board/i });
-    const deleteButton = screen.getByRole("link", { name: /delete board/i });
+    const deleteButton = screen.getByRole("link", { name: /start over/i });
     const title = screen.getByRole('heading', {name: /test board/i});
     const images = screen.getAllByRole('img');
 

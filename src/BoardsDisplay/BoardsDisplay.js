@@ -7,7 +7,7 @@ import './BoardsDisplay.scss';
 
 const BoardsDisplay = ({savedBoards, removeBuiltBoard}) => {
 
-  const renderBoards = (savedBoards) ?
+  const renderBoards = (!savedBoards.length === 0 || savedBoards.length > 0) ?
   savedBoards.map(board => {
     return (
       <article className="board-card" key={board.name}>
