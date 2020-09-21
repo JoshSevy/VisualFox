@@ -9,6 +9,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import Prompt from '../Prompt/Prompt';
 import Results from '../Results/Results';
 import Board from '../Board/Board';
+import BoardsDisplay from '../BoardsDisplay/BoardsDisplay';
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -43,7 +44,8 @@ const App = () => {
   }
 
   const saveBuiltBoard = () => {
-    setSavedBoards(builtBoard);
+    const boards = [...savedBoards, builtBoard] || [builtBoard];
+    setSavedBoards(boards);
     setBuiltBoard({})
   }
 
@@ -127,6 +129,18 @@ const App = () => {
             <Board
               builtBoard={builtBoard}
               saveBuiltBoard={saveBuiltBoard}
+              removeBuiltBoard={removeBuiltBoard}
+            />
+          );
+        }}
+      />
+      <Route
+        exact
+        path="/savedboards"
+        render={() => {
+          return (
+            <BoardsDisplay
+              savedBoards={savedBoards}
               removeBuiltBoard={removeBuiltBoard}
             />
           );
