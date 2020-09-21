@@ -2,7 +2,13 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+import * as axios from 'axios';
 
+jest.mock('../helpers/unsplash');
+jest.mock('axios');
+import { unsplashResponse } from '../helpers/unsplash';
+
+import { testMockedFetchData } from '../helpers/boardsData';
 import App from './App';
 
 describe('App Component', () => {
@@ -68,7 +74,85 @@ describe('App Component', () => {
     expect(categoryOptions).toHaveLength(7);
   })
 
-  it('should check input fields in prompt 1 and render results on next', () => {
+  // it('should check prompt changes and results async functions', async () => {
+  //   unsplashResponse.mockResolvedValueOnce({data : {results: testMockedFetchData}});
+
+  //   render(
+  //     <MemoryRouter>
+  //       <App />
+  //     </MemoryRouter>
+  //   );
     
+  //   const getStartedLink = screen.getByRole("link", {
+  //     name: /lets get started!/i,
+  //   });
+
+  //   fireEvent.click(getStartedLink);
+
+  //   const textInput = screen.getByPlaceholderText(/lets name this board/i);
+  //   const categorySelect = screen.getByRole("combobox", {
+  //     name: /select a category/i,
+  //   });
+  //   const subCategorySelect = screen.getByRole("combobox", {
+  //     name: /subcategory/i,
+  //   });
+    
+  //   fireEvent.change(textInput, {target : {value: "Test Board"}})
+  //   fireEvent.change(categorySelect, {target: {value: "fitness"}})
+  //   fireEvent.change(subCategorySelect, {target: {value: "lose weight"}})
+
+  //   const nextBtn = screen.getByRole('link', {name: /next/i})
+    
+  //   expect(nextBtn).toBeInTheDocument();
+
+  //   fireEvent.click(nextBtn);
+
+  //   const resultsTitle = await waitFor(() => screen.getByRole('heading', {name: /choose two/i}))
+  //   const continueBtn = await waitFor(() => screen.getByRole('link', {name: /continue/i}))
+
+  //   expect(resultsTitle).toBeInTheDocument();
+  //   expect(continueBtn).toBeInTheDocument();
+
+  //   fireEvent.click(continueBtn);
+
+  //   const prompt2Title = screen.getByRole('heading', {name: /great work lets/i})
+
+  //   expect(prompt2Title).toBeInTheDocument();
+  // })
+
+  it('should go route to error page if fetch request fails', () => {
+    unsplashResponse.mockRejectedValueOnce({});
+
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    )
+
+    const getStartedLink = screen.getByRole("link", {
+      name: /lets get started!/i,
+    });
+
+    fireEvent.click(getStartedLink);
+
+    const textInput = screen.getByPlaceholderText(/lets name this board/i);
+    const categorySelect = screen.getByRole("combobox", {
+      name: /select a category/i,
+    });
+    const subCategorySelect = screen.getByRole("combobox", {
+      name: /subcategory/i,
+    });
+
+    fireEvent.change(textInput, { target: { value: "Test Board" } });
+    fireEvent.change(categorySelect, { target: { value: "fitness" } });
+    fireEvent.change(subCategorySelect, { target: { value: "lose weight" } });
+
+    const nextBtn = screen.getByRole("link", { name: /next/i });
+
+    expect(nextBtn).toBeInTheDocument();
+
+    fireEvent.click(nextBtn);
+
+    screen.debug()
   })
 })

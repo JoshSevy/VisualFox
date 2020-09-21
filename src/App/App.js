@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect, Route } from "react-router-dom";
 
-import unsplash from '../helpers/unsplash';
+import { unsplashResponse } from '../helpers/unsplash';
 
 import Header from '../Header/Header';
 import Home from '../Home/Home';
@@ -22,13 +22,7 @@ const App = () => {
 
   const onSearchSubmit = async (term) => {
     try {
-      const response = await unsplash.get(
-        "https://api.unsplash.com/search/photos",
-        {
-          params: { query: term },
-        }
-      )
-      setImages(response.data.results)
+      await unsplashResponse(term).then(response => setImages(response.data.results));
     } catch (error) {
       setError(true)
     }
