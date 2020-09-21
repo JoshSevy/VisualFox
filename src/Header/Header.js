@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './Header.scss';
 import  foxLogo  from '../assets/logo/foxLogo.png';
@@ -36,3 +37,7 @@ const Header = ({resetError}) => {
 }
 
 export default Header;
+
+Header.propTypes = {
+  resetError: PropTypes.func,
+}

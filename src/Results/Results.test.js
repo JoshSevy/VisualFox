@@ -2,7 +2,7 @@ import React from 'react';
 import { screen, render } from '@testing-library/react';
 import { MemoryRouter } from "react-router-dom";
 
-import { testMockedFetchData } from '../helpers/boardsData'
+import { testMockedFetchData } from '../helpers/visualFoxData'
 
 import Results from './Results';
 

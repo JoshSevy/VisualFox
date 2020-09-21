@@ -15,11 +15,9 @@ describe('BoardsDisplay Component', () => {
       </MemoryRouter>
     );
     
-    const title = screen.getByRole('heading', {name: /your saved boards!/i});
+    const title = screen.getByRole('heading', {name: /where we hide/i});
     const boardTitle = screen.getByRole('heading', {name: /lets do it/i});
     const foxLogo = screen.getAllByRole('img');
-
-    screen.debug()
 
     expect(title).toBeInTheDocument();
     expect(boardTitle).toBeInTheDocument();

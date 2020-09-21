@@ -1,3 +1,5 @@
+//IMAGES ON LOAD
+
 export const homeImages = [
   "https://placebeard.it/640x360",
   "https://images.unsplash.com/photo-1561495935-cafaf7d196e0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE1Njg5OH0",
@@ -9,6 +11,8 @@ export const homeImages = [
   "https://picsum.photos/seed/picsum/200/300",
 ];
 
+
+//TESTING DATA 
 export const testDataBoards = {
   id: 1,
   name: "test board",

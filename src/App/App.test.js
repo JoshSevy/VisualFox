@@ -6,7 +6,7 @@ import '@testing-library/jest-dom';
 jest.mock('../helpers/unsplash');
 
 import { unsplashResponse } from '../helpers/unsplash';
-import { testMockedFetchData } from '../helpers/boardsData';
+import { testMockedFetchData } from '../helpers/visualFoxData';
 import App from './App';
 
 describe('App Component', () => {
@@ -59,7 +59,7 @@ describe('App Component', () => {
 
     fireEvent.click(boardsBtn);
 
-    const boardsHeading = screen.getByRole('heading', {name: /your saved boards!/i});
+    const boardsHeading = screen.getByRole("heading", { name: /where we hide/i });
     const noBoardsHeading = screen.getByRole('heading', {name: /no boards yet/i});
     const buildBoardBtn = screen.getByRole('link', { name: /lets go!/i });
 
@@ -336,24 +336,20 @@ describe('App Component', () => {
     expect(finalHeading).toBeInTheDocument();
     expect(buildBoardLink).toBeInTheDocument();
 
-    //Trying to figure out why I wasn't getting error but now am.
+    fireEvent.click(buildBoardLink);
 
-    // fireEvent.click(buildBoardLink);
+    const boardName = screen.getByRole('heading', {name: /test board/i});
+    const saveLink = screen.getByRole('link', {name: /save board/i});
+    const restartLink = screen.getByRole('link', {name: /start over/i});
 
-    // const boardName = await waitFor(() => screen.getByRole('heading', {name: /test board/i}));
-    // const saveLink = screen.getByRole('link', {name: /save board/i});
-    // const deleteLink = screen.getByRole('link', {name: /delete board/i});
+    expect(boardName).toBeInTheDocument();
+    expect(saveLink).toBeInTheDocument();
+    expect(restartLink).toBeInTheDocument();
 
-    // expect(boardName).toBeInTheDocument();
-    // expect(saveLink).toBeInTheDocument();
-    // expect(deleteLink).toBeInTheDocument();
+    fireEvent.click(restartLink);
 
-    // fireEvent.click(deleteLink);
+    const backToPromptStart = screen.getByRole('heading', {name: /type of board are we/i})
 
-    // const backHomeHeader = screen.getByRole('heading', {name: /visualize your goals/i})
-
-    // screen.debug()
-
-    // expect(backHomeHeader).toBeInTheDocument();
+    expect(backToPromptStart).toBeInTheDocument();
   })
 })

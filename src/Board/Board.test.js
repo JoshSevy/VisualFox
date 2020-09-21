@@ -3,7 +3,7 @@ import { screen, render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
-import { testDataBoards } from '../helpers/boardsData';
+import { testDataBoards } from '../helpers/visualFoxData';
 
 import Board from './Board';
 
