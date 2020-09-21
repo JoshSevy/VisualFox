@@ -6,11 +6,11 @@ import ImageList from '../ImageList/ImageList';
 
 import './Board.scss';
 
-const Board = ({builtBoard, saveBuiltBoard, resetPrompts, selectedBoard, deleteBoard}) => {
+const Board = ({builtBoard, saveBuiltBoard, resetPrompts, selectedBoard, removeBuiltBoard}) => {
 
   return (
     <article className="Board">
-      <h2>{builtBoard.name}</h2>
+      <h2>{(!selectedBoard) ? builtBoard.name : selectedBoard.name}</h2>
       <article className="board-btn-container">
         {!selectedBoard ? (
           <>
@@ -41,7 +41,7 @@ const Board = ({builtBoard, saveBuiltBoard, resetPrompts, selectedBoard, deleteB
             <Link
               to="/"
               className="btn btn-white"
-              onClick={() => deleteBoard()}
+              onClick={(e) => removeBuiltBoard(e)}
             >
               Delete Board
             </Link>
