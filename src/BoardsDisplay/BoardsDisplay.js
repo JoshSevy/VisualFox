@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import foxLogo from '../assets/logo/foxLogo.png'
 import './BoardsDisplay.scss';
 
-const BoardsDisplay = ({savedBoards, removeBuiltBoard}) => {
+const BoardsDisplay = ({savedBoards}) => {
 
   const renderBoards =
     !savedBoards.length === 0 || savedBoards.length > 0 ? (
@@ -55,6 +55,5 @@ const BoardsDisplay = ({savedBoards, removeBuiltBoard}) => {
 export default BoardsDisplay;
 
 BoardsDisplay.propTypes = {
-  removeBuiltBoard: PropTypes.func,
   savedBoards: PropTypes.array,
 }

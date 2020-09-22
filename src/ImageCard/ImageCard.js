@@ -5,7 +5,7 @@ import './ImageCard.scss';
 
 const ImageCard = (props) => {
   const [spans, setSpans] = useState(0);
-  const [isCardMarked, setIsCardMarked] = useState(false)
+  const [isCardMarked, setIsCardMarked] = useState(false);
   const imageRef = useRef(null);
 
   useEffect(() => {

@@ -7,8 +7,8 @@ import foxLogo from '../assets/logo/foxLogo.png'
 import { options, promptHeadings} from '../helpers/dropdownOptions'
 
 const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, resetPrompts, getBuiltBoard, boardName}) => {
-  const [mainSelection, setMainSelection] = useState('default')
-  const [selected, setSelected] = useState()
+  const [mainSelection, setMainSelection] = useState('default');
+  const [selected, setSelected] = useState();
   const [name, setName] = useState('');
   
   const selectOptions = options[mainSelection];
@@ -57,9 +57,9 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
           to={`/board/${boardName}`} 
           className="btn btn-white"
           onClick={() => {
-            getBuiltBoard()
-            resetPrompts()
-            clearPromptState()
+            getBuiltBoard();
+            resetPrompts();
+            clearPromptState();
             }}
         >
           Build Your Board!
@@ -120,8 +120,8 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
         </article>
       </article>
     );
-  }
-}
+  };
+};
 
 export default Prompt;
 

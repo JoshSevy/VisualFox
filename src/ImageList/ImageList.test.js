@@ -3,7 +3,7 @@ import { screen, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
-import { testMockedFetchData } from '../helpers/visualFoxData'
+import { testMockedFetchData } from '../helpers/visualFoxData';
 import ImageList from './ImageList';
 
 describe('ImageList Component', () => {

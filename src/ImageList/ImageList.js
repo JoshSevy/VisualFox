@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ImageCard from '../ImageCard/ImageCard'
+import ImageCard from '../ImageCard/ImageCard';
 import './ImageList.scss';
 
 const ImageList = ({images, getResultSelections, resultSelections}) => {
@@ -16,8 +16,7 @@ const ImageList = ({images, getResultSelections, resultSelections}) => {
     ) 
   });
 
-  return <div className="image-list">{displayImages}</div>;
-
+  return <div className="image-list">{displayImages}</div>
 };
 
 export default ImageList

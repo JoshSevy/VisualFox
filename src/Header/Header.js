@@ -28,9 +28,6 @@ const Header = ({resetError}) => {
         <NavLink to="/savedboards" className="btn btn-white">
           <p className="btn-text">Boards</p>
         </NavLink>
-        {/* <NavLink to="/prompt" className="btn btn-white">
-          <p className="btn-text">New Board</p>
-        </NavLink> */}
       </article>
     </section>
   );

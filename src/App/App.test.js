@@ -20,7 +20,7 @@ describe('App Component', () => {
     const title = screen.getByRole('heading', {name: /visualize your goals/i});
     const landingPageImages = screen.getAllByRole('img');
     const subHeading = screen.getByRole('heading', {name: /but why?/i});
-    const getStartedLink = screen.getByRole('link', {name: /lets get started!/i})
+    const getStartedLink = screen.getByRole('link', {name: /lets get started!/i});
 
     expect(title).toBeInTheDocument();
     expect(landingPageImages).toHaveLength(9);
@@ -59,7 +59,7 @@ describe('App Component', () => {
 
     fireEvent.click(boardsBtn);
 
-    const boardsHeading = screen.getByRole("heading", { name: /where we hide/i });
+    const boardsHeading = screen.getByRole('heading', { name: /where we hide/i });
     const noBoardsHeading = screen.getByRole('heading', {name: /no boards yet/i});
     const buildBoardBtn = screen.getByRole('link', { name: /lets go!/i });
 
@@ -141,25 +141,25 @@ describe('App Component', () => {
       name: /subcategory/i,
     });
     
-    fireEvent.change(textInput, {target : {value: 'Test Board'}})
-    fireEvent.change(categorySelect, {target: {value: 'fitness'}})
-    fireEvent.change(subCategorySelect, {target: {value: 'lose weight'}})
+    fireEvent.change(textInput, {target : {value: 'Test Board'}});
+    fireEvent.change(categorySelect, {target: {value: 'fitness'}});
+    fireEvent.change(subCategorySelect, {target: {value: 'lose weight'}});
 
-    const nextBtn = screen.getByRole('link', {name: /next/i})
+    const nextBtn = screen.getByRole('link', {name: /next/i});
     
     expect(nextBtn).toBeInTheDocument();
 
     fireEvent.click(nextBtn);
 
-    const resultsTitle = await waitFor(() => screen.getByRole('heading', {name: /choose some inspiration/i}))
-    const continueBtn = await waitFor(() => screen.getByRole('link', {name: /continue/i}))
+    const resultsTitle = await waitFor(() => screen.getByRole('heading', {name: /choose some inspiration/i}));
+    const continueBtn = await waitFor(() => screen.getByRole('link', {name: /continue/i}));
 
     expect(resultsTitle).toBeInTheDocument();
     expect(continueBtn).toBeInTheDocument();
 
     fireEvent.click(continueBtn);
 
-    const prompt2Title = screen.getByRole('heading', {name: /great work lets/i})
+    const prompt2Title = screen.getByRole('heading', {name: /great work lets/i});
 
     expect(prompt2Title).toBeInTheDocument();
   })
@@ -348,7 +348,7 @@ describe('App Component', () => {
 
     fireEvent.click(restartLink);
 
-    const backToPromptStart = screen.getByRole('heading', {name: /type of board are we/i})
+    const backToPromptStart = screen.getByRole('heading', {name: /type of board are we/i});
 
     expect(backToPromptStart).toBeInTheDocument();
   })

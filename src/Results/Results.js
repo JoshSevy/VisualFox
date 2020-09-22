@@ -33,7 +33,7 @@ const Results = ({images, getBoardPhotos, promptNumber}) => {
       />
     </section>
   );
-}
+};
 
 export default Results;
 
