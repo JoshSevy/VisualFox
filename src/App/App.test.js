@@ -151,7 +151,7 @@ describe('App Component', () => {
 
     fireEvent.click(nextBtn);
 
-    const resultsTitle = await waitFor(() => screen.getByRole('heading', {name: /choose two/i}))
+    const resultsTitle = await waitFor(() => screen.getByRole('heading', {name: /choose some inspiration/i}))
     const continueBtn = await waitFor(() => screen.getByRole('link', {name: /continue/i}))
 
     expect(resultsTitle).toBeInTheDocument();

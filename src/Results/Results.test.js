@@ -16,7 +16,7 @@ describe('Results Component', () => {
       </MemoryRouter>
     )
 
-    const mainHeading = screen.getByRole('heading', {name: /choose two/i});
+    const mainHeading = screen.getByRole('heading', {name: /choose some inspiration/i});
     const continueBtn = screen.getByRole('link', {name: /continue/i});
     const images = screen.getAllByRole('img');
 
