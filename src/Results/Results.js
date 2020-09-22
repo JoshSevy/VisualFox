@@ -11,9 +11,6 @@ const Results = ({images, getBoardPhotos, promptNumber}) => {
   const getResultSelections = (image) => {
     const maxSelection = resultSelections;
     maxSelection.push(image);
-    if (maxSelection.length > 2) {
-      maxSelection.shift();
-    }
     setResultSelections(maxSelection);
   };
 
@@ -27,7 +24,7 @@ const Results = ({images, getBoardPhotos, promptNumber}) => {
           Continue
         </Link>
       </article>
-      <h3>Choose Two Pictures</h3>
+      <h3>Choose Some Inspiration</h3>
       <ImageList 
         images={images} 
         resultSelections={resultSelections}

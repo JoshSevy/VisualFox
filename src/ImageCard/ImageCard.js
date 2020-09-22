@@ -28,7 +28,7 @@ const ImageCard = (props) => {
         id={id}
         ref={imageRef} 
         alt={alt_description} 
-        src={urls.thumb} 
+        src={urls.regular} 
         onClick={() => {
           setIsCardMarked(!isCardMarked);
           props.getResultSelections(props.image)}}

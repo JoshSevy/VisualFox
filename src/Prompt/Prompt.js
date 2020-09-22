@@ -79,8 +79,9 @@ const Prompt = ({onSearchSubmit, getBoardName, getPromptNumber, promptNumber, re
           <article className="prompt-input">
             {promptNumber === 1 ? (
               <>
-                <label>Name your Board:</label>
+                <label htmlFor="board-name">Name your Board:</label>
                 <input
+                  id="board-name"
                   type="text"
                   placeholder="Lets name this board"
                   value={name}

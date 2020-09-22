@@ -11,7 +11,7 @@ describe('ImageCard Component', () => {
     const image = {
       id: "test",
       description: "Great photo",
-      urls: {thumb: "http://test.org"},
+      urls: {regular: "http://test.org"},
     };
 
     const mockResults = [{image}, {image}];
