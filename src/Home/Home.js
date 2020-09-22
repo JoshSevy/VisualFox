@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { homeImages } from '../helpers/boardsData';
+import { homeImages } from '../helpers/visualFoxData';
 import './Home.scss';
 import '../style/buttons.scss'
 

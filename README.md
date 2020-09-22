@@ -42,10 +42,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here a Visual Fox our goal is to help you create a clear vision of your goals. In the app we ask some questions to help zone in on these goals and build a visual board for you to help keep you vision clear. 
+You may be asking yourself, “What exactly is a vision board?” And truthfully, it is anything you want it to be. The purpose of one is to essentially remind yourself of personal goals, aspirations, weekly plans and more. They are most helpful when you are seeking to manifest your dream reality. So now you may ask, “Where do I start and how do I make one?”
 
-Turing Mod 3 solo project.
-With a 5 day turn around to MVP.
+VisualFox is here to help, use imagery to help visualize your goals and reach the heights you deserve.
+
+This was a Mod 3 final Solo Project, we were given 5 1/2 days to come up with an idea and implement it into an MVP. I built it using React's hook system and utilized the unsplash api. Thank you for checking out my project, if you have any questions or wish to connect please dont hesitate to reach out.
 
 ### Built With
 
@@ -53,6 +54,7 @@ With a 5 day turn around to MVP.
 * [React](reactjs.org)
 * [Sass](sass-lang.com)
 * [Jest](jestjs.io)
+* [Axios](https://www.npmjs.com/package/axios)
 
 ## Getting Started
 
@@ -66,20 +68,20 @@ Once all dependencies are installed, run
 
 ## Usage
 
-![gif of home]()</br>
+![gif of home](https://media.giphy.com/media/sxzzg5tydhn0K9n62e/giphy.gif)</br>
 *Home Page*
 
-![gif of location page]()</br>
-*DreamBoard*
+![gif of no boards page](https://media.giphy.com/media/PYfbRkd8D7EN5Z2Hor/giphy.gif)</br>
+*Boards Page without any saved boards*
 
-![gif of about page]()</br>
-*About Page*
-
-![gif of search functionality]()</br>
+![gif of prompts](https://media.giphy.com/media/3LTQ1SsU34YtHmfJba/giphy.gif)</br>
 *Prompts*
 
-![gif of loading screen]()</br>
-*Loading Page*
+![gif of search results](https://media.giphy.com/media/X26dlBbrPyBGRjg3ia/giphy.gif)</br>
+*Results*
+
+![gif of built board](https://media.giphy.com/media/DnkrGLTMSnx8fdLyTt/giphy.gif)</br>
+*Built Board*
 
 
 ## Roadmap

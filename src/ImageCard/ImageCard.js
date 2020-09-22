@@ -5,7 +5,7 @@ import './ImageCard.scss';
 
 const ImageCard = (props) => {
   const [spans, setSpans] = useState(0);
-  const [isCardMarked, setIsCardMarked] = useState(false)
+  const [isCardMarked, setIsCardMarked] = useState(false);
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const ImageCard = (props) => {
         id={id}
         ref={imageRef} 
         alt={alt_description} 
-        src={urls.thumb} 
+        src={urls.regular} 
         onClick={() => {
           setIsCardMarked(!isCardMarked);
           props.getResultSelections(props.image)}}

@@ -36,6 +36,7 @@ export const options = {
   dream: [
     {
       label: "We all have dreams",
+      value: "dreams"
     },
     {
       label: "Dream House",
@@ -44,33 +45,30 @@ export const options = {
     {
       label: "Dream Car",
       value: "nice cars",
-      id: "cars",
     },
     {
       label: "Dream Vacation",
       value: "luxury travel",
-      id: "travel"
     },
     {
       label: "Dream Job",
       value: "fun work",
-      id: "work"
     },
   ],
   diet: [
     {
       label: "Lets get Healthy",
-      id: "diet main"
+      value: "crazy food"
     },
     {
       label: "Healthy",
       value: "health food",
-      id: "health food"
+      
     },
     {
       label: "Beautiful Snacks",
       value: "beautiful food",
-      id: "beautiful food"
+      
     },
     {
       label: "Keto Insperation",
@@ -86,61 +84,50 @@ export const options = {
     {
       label: "Lets play",
       value: "sports",
-      id: "main sport"
     },
     {
       label: "Soccer",
       value: "soccer",
-      id: "soccer"
     },
     {
       label: "FootBall",
       value: "american football",
-      id: "football"
     },
     {
       label: "Gymnastics",
       value: "gymnastics",
-      id: "gymnastics"
     },
     {
       label: "Martial Arts",
       value: "martial arts",
-      id: "martial arts"
     },
   ],
   financial: [
     {
       label: "Lets fill that piggy bank",
       value: "money",
-      id: "money main"
     },
     {
       label: "Save Money",
       value: "save money",
-      id: "savings"
     },
     {
       label: "DIY Inspirations",
       value: "DIY",
-      id: "diy"
     },
     {
       label: "Sell Items",
-      value: "sell stuff",
-      id: "sell"
+      value: "garage sell",
     },
     {
       label: "Be Crafty",
       value: "crafts",
-      id: "crafts"
     },
   ],
   default: [
     {
       label: "No options yet!",
-      value: "default",
-      id: "default"
+      value: "random",
     },
   ],
 };

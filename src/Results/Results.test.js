@@ -1,8 +1,8 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter } from 'react-router-dom';
 
-import { testMockedFetchData } from '../helpers/boardsData'
+import { testMockedFetchData } from '../helpers/visualFoxData'
 
 import Results from './Results';
 
@@ -16,7 +16,7 @@ describe('Results Component', () => {
       </MemoryRouter>
     )
 
-    const mainHeading = screen.getByRole('heading', {name: /choose two/i});
+    const mainHeading = screen.getByRole('heading', {name: /choose some inspiration/i});
     const continueBtn = screen.getByRole('link', {name: /continue/i});
     const images = screen.getAllByRole('img');
 

@@ -3,7 +3,7 @@ import { screen, render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
-import { testDataBoards } from '../helpers/boardsData';
+import { testDataBoards } from '../helpers/visualFoxData';
 
 import Board from './Board';
 
@@ -15,8 +15,8 @@ describe('Board Component', () => {
       </MemoryRouter>
     );
 
-    const saveButton = screen.getByRole("link", { name: /save board/i });
-    const deleteButton = screen.getByRole("link", { name: /delete board/i });
+    const saveButton = screen.getByRole('link', { name: /save board/i });
+    const deleteButton = screen.getByRole('link', { name: /start over/i });
     const title = screen.getByRole('heading', {name: /test board/i});
     const images = screen.getAllByRole('img');
 

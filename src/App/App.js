@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route } from 'react-router-dom';
 
 import { unsplashResponse } from '../helpers/unsplash';
 
@@ -24,7 +24,7 @@ const App = () => {
     try {
       await unsplashResponse(term).then(response => setImages(response.data.results));
     } catch (error) {
-      setError(true)
+      setError(true);
     }
   };
 
@@ -34,20 +34,20 @@ const App = () => {
       name: boardName,
       images: boardImages
     }
-    setBuiltBoard(board)
+    setBuiltBoard(board);
   }
 
   const saveBuiltBoard = () => {
     const boards = [...savedBoards, builtBoard] || [builtBoard];
     setSavedBoards(boards);
-    setBuiltBoard({})
+    setBuiltBoard({});
   }
 
   const removeBuiltBoard = (e) => {
     const boards = savedBoards;
     const index = boards.indexOf(e.target.id);
     boards.splice(index, 1);
-    setSavedBoards(boards)
+    setSavedBoards(boards);
   }
 
   const findSavedBoardByName = (name) => {
@@ -55,7 +55,7 @@ const App = () => {
   }
 
   const resetError = () => {
-    setError(false)
+    setError(false);
   };
 
   const resetPrompts = () => {
@@ -66,7 +66,7 @@ const App = () => {
 
   const getBoardName = (name) => {
     const persistName = boardName || name;
-    setBoardName(persistName)
+    setBoardName(persistName);
   }
 
   const getBoardPhotos = (images) => {

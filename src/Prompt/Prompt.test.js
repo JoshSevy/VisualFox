@@ -45,10 +45,10 @@ describe('Prompt Component', () => {
 
     expect(optionsAfterFire).toHaveLength(11);
 
-    fireEvent.change(selectField2, {target: {value: 'save money'}})
+    fireEvent.change(selectField2, {target: {value: 'save money'}});
 
     const nextBtn = screen.getByRole('link', {name: /next/i});
 
-    expect(nextBtn).toHaveAttribute('href' , "/result/save money")
+    expect(nextBtn).toHaveAttribute('href' , "/result/save money");
   })
 })

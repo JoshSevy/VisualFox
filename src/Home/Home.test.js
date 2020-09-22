@@ -11,14 +11,14 @@ describe('Home Component', () => {
         <Home />
       </MemoryRouter>
     )
-    const title = screen.getByRole('heading', {name: /visualize your goals/i})
-    const images = screen.getAllByRole('img')
-    const infoSection = screen.getByRole('heading', {name: /but why?/i})
-    const button = screen.getByRole('link', {name: /lets get started!/i})
+    const title = screen.getByRole('heading', {name: /visualize your goals/i});
+    const images = screen.getAllByRole('img');
+    const infoSection = screen.getByRole('heading', {name: /but why?/i});
+    const button = screen.getByRole('link', {name: /lets get started!/i});
 
-    expect(title).toBeInTheDocument()
-    expect(images).toHaveLength(8)
-    expect(infoSection).toBeInTheDocument()
-    expect(button).toBeInTheDocument()
+    expect(title).toBeInTheDocument();
+    expect(images).toHaveLength(8);
+    expect(infoSection).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   })
 })
