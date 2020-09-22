@@ -19,7 +19,7 @@
     <a href="https://github.com/joshsevy/VisualFox"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/joshsevy/VisualFox">View Demo</a>
+    <a href="https://visual-fox.herokuapp.com"/>View Demo</a>
     ·
     <a href="https://github.com/joshsevy/VisualFox/issues">Report Bug</a>
     ·
@@ -58,7 +58,7 @@ This was a Mod 3 final Solo Project, we were given 5 1/2 days to come up with an
 
 ## Getting Started
 
-To interact with the app without cloning down the repo, check out our [deployed page]().
+To interact with the app without cloning down the repo, check out our [deployed page](https://visual-fox.herokuapp.com/).
 Otherwise, fork and clone down the repo. 
 
 Once you have locally cloned down the repo, within that directory, run 
