@@ -3,7 +3,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
+[![Build Status][travis-shield]][travis-url]
 
 
   <br />
@@ -117,4 +117,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [issues-url]: https://github.com/joshsevy/VisualFox/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/josh-sevy
-
+[travis-shield]: https://travis-ci.org/joshsevy/VisualFox.svg?branch=master
+[travis-url]: https://travis-ci.org/joshsevy/VisualFox
